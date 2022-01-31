@@ -1,4 +1,4 @@
-console.log("main.js linked!");
+console.log("main.js linked!") 
 
 ////////////////////////////////////////////////
 // Part 1: Linking
@@ -19,14 +19,14 @@ const album1 = {
     label:    "Sire",
     formats:  ["LP"]
   }
-};
+} 
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
-const label = album1.albumDetails.label;
+const label = album1.albumDetails.label
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
-album1.title = "Talking Heads: 77";
+album1.title = "Talking Heads: 77"
 
 const album2 = {
   title: "More Songs About Buildings and Food",
@@ -35,7 +35,7 @@ const album2 = {
     label:    "Sire",
     formats:  ["LP", "8-track"]
   }
-};
+} 
 
 const album3 = {
   title: "Fear of Music",
@@ -44,14 +44,14 @@ const album3 = {
     label:    "Sire",
     formats:  ["Cassette"]
   }
-};
+} 
 
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
-album3.albumDetails.formats.push(album2.albumDetails.formats[0]);
+album3.albumDetails.formats.push(album2.albumDetails.formats[0])
 
 // 4. Change the release date of album3 from a string into a Date object
-album3.released = new Date('August 3, 1979');
+album3.released = new Date('August 3, 1979')
 
 const album4 = {
   title: "Remain in Light",
@@ -59,10 +59,10 @@ const album4 = {
     released: new Date("October 8, 1980"),
     formats: ["Cassette", "LP"]
   }
-};
+} 
 
 // 5. Add the label "Sire" to album4's details
-album4.albumDetails.label = "Sire";
+album4.albumDetails.label = "Sire" 
 
 const album5 = {
   title: "Speaking in Tongues",
@@ -70,10 +70,10 @@ const album5 = {
     released: new Date("May 31, 1983"),
     label: "Sire"
   }
-};
+} 
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
-album5.albumDetails.formats = ["CD", "Cassette", "LP"];
+album5.albumDetails.formats = ["CD", "Cassette", "LP"] 
 
 
 const album6 = {
@@ -83,10 +83,10 @@ const album6 = {
     labels:   ["Sire", "emi"],
     formats:  ["CD", "cassette", "LP"]
   }
-};
+} 
 
 // 7. Make the label "emi" in album6 all uppercase
-album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase();
+album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase() 
 
 const album7 = {
   title: "True Stories",
@@ -95,11 +95,11 @@ const album7 = {
     labels:   "Sire, EMI",
     formats:  ["CD", "cassette", "LP"]
   }
-};
+} 
 
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
-album7.albumDetails.labels = album7.albumDetails.labels.split(",");
+album7.albumDetails.labels = album7.albumDetails.labels.split(",") 
 
 const album8 = {
   title: "Naked",
@@ -108,7 +108,7 @@ const album8 = {
     label:    ["Sire", "EMI"],
     formats:  ["CD", "cassette", "LP"]
   }
-};
+} 
 
 const talkingHeadsAlbums = [
   album1,
@@ -119,31 +119,31 @@ const talkingHeadsAlbums = [
   album6,
   album7,
   album8
-];
+] 
 
 /////////////////////////////////////////////////////
 // Part 3: More Tasks About Datatypes and Structures
 /////////////////////////////////////////////////////
 
 // 1. Create an object literal called `band`.
-let band = {};
+let band = {} 
 
 // 2. Give it the property `name` and set it to "Talking Heads"
-band.name = "Talking Heads";
+band.name = "Talking Heads" 
 
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
-band.members = ["David Byrne"];
+band.members = ["David Byrne"] 
 
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
-band.albums = talkingHeadsAlbums;
+band.albums = talkingHeadsAlbums 
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
-band.members.push("Tiny Weymouth");
-band.members.push("Chris Franz");
-band.members.push("Jerry Harrison");
+band.members.push("Tiny Weymouth") 
+band.members.push("Chris Franz") 
+band.members.push("Jerry Harrison") 
 
 ////////////////////////////////////////////////
 // Part 4: Conditional Logic
@@ -154,20 +154,20 @@ band.members.push("Jerry Harrison");
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 if(talkingHeadsAlbums.length >= 6) {
-    console.log("Talking Heads were a prolific band");
+    console.log("Talking Heads were a prolific band") 
 } else {
-    console.log("Talking heads didn't have much output.");
+    console.log("Talking heads didn't have much output.") 
 }
 
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
-var numAlbums = talkingHeadsAlbums.length;
+var numAlbums = talkingHeadsAlbums.length 
 if(numAlbums % 2 === 0) {
-    console.log("The number", numAlbums, "is even");
+    console.log("The number", numAlbums, "is even") 
 } else {
-    console.log("The number", numAlbums, "is odd");
+    console.log("The number", numAlbums, "is odd") 
 }
 
 // 3. Write conditionals to check if the number of albums in
@@ -179,18 +179,18 @@ if(numAlbums % 2 === 0) {
 //    - "The number Y is not divisible by 2 or 3",
 //
 //    with Y being the number of albums.
-var numAlbums = talkingHeadsAlbums.length;
+var numAlbums = talkingHeadsAlbums.length 
 
 if(numAlbums === 0) {
     console.log("The number 0 is not divisible by 2 or 3 ")
 } else if(numAlbums % 2 === 0 && numAlbums % 3 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 2 and 3`);
+    console.log(`The number ${numAlbums} is divisible by 2 and 3`) 
 } else if(numAlbums % 3 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 3`);
+    console.log(`The number ${numAlbums} is divisible by 3`) 
 } else if(numAlbums % 2 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 2`);
+    console.log(`The number ${numAlbums} is divisible by 2`) 
 } else {
-    console.log(`The number ${numAlbums} is not divisible by 2 or 3`);
+    console.log(`The number ${numAlbums} is not divisible by 2 or 3`) 
 }
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
@@ -202,7 +202,7 @@ if(numAlbums === 0) {
 
 // 1. Use a for loop to print out the name of each Talking Heads album
 for(album of talkingHeadsAlbums) {
-    console.log(album.title);
+    console.log(album.title) 
 }
 
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
@@ -211,16 +211,16 @@ for(album of talkingHeadsAlbums) {
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
-let sireTally = 0;
+let sireTally = 0 
 for(album of talkingHeadsAlbums) {
     // If the property name is "label"
     if(album.albumDetails.label === "Sire") {
-        sireTally++;
+        sireTally++ 
     }
     // If the property name is "labels"
     if(album.albumDetails.labels) {
         if(album.albumDetails.labels.includes("Sire")) {
-            sireTally++;
+            sireTally++ 
         }
     }
 }
@@ -245,13 +245,13 @@ for(album of talkingHeadsAlbums) {
 //      section: "right",
 //      type: "premium",
 //      seats: 1
-//    };
+//    } 
 //    var ticket1 = {
 //      name: "Newt Gingrich",
 //      section: "center",
 //      type: "standard",
 //      seats: 4
-//    };
+//    } 
 //
 //    Messages:
 //    "Welcome, Madeline Albright! You may sit anywhere in the first 3 rows of the right section."
@@ -265,10 +265,10 @@ const tickets = [
   {name: "Marion Barry",          section: "center", type: "standard", seats: 8},
   {name: "Warren Christopher",    section: "right",  type: "standard", seats: 1},
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
-];
+] 
 
 for(guest of tickets) {
-    let welcomeStr = `Welcome, ${guest.name}!`;
+    let welcomeStr = `Welcome, ${guest.name}!` 
 
     if(guest.seats === 1) {
         welcomeStr += " You may sit anywhere"
@@ -283,7 +283,7 @@ for(guest of tickets) {
     }
 
     welcomeStr += "\nPlease be sure to leave no seats between you."
-    console.log(welcomeStr);
+    console.log(welcomeStr) 
 }
 
 
@@ -325,34 +325,34 @@ const tickets = [
   {amount: 80.00, discount: true}, // PREMIER PLUS
   {amount: 90.00}, // PREMIER PLUS
   {amount: 50.00, discount: true} // STANDARD $10 DRINKS
-];
+] 
 
 for(ticket of tickets) {
-    let str = "";
-    let drinkCredit = 0;
+    let str = "" 
+    let drinkCredit = 0 
 
     // Keep track of how much drink credit guest is eligble for 
     if(ticket.discount) {
-        drinkCredit += 10;
+        drinkCredit += 10 
     }
     if(ticket.zombie) {
-        drinkCredit += 10;
+        drinkCredit += 10 
     }
 
     // Use different labling for different price points
     if(ticket.amount == 50) {
-        str = "STANDARD";
+        str = "STANDARD" 
     } else if(ticket.amount == 65) {
-        str = "PREMIER";
+        str = "PREMIER" 
     } else if (ticket.amount == 90) {
-        console.log("PREMIER PLUS");
-        continue; // Don't need to print anything other than this. Move on to the next guest
+        console.log("PREMIER PLUS") 
+        continue  // Don't need to print anything other than this. Move on to the next guest
     } else if (ticket.amount == 80 && ticket.discount) {
-        console.log("PREMIER PLUS");
-        continue;
+        console.log("PREMIER PLUS") 
+        continue 
     } else {
-        console.log("ERROR: INVALID TICKET");
-        continue;
+        console.log("ERROR: INVALID TICKET") 
+        continue 
     }
 
     // Append drink credits to end of string
@@ -360,5 +360,5 @@ for(ticket of tickets) {
         str += ` $${drinkCredit} DRINKS`
     }
 
-    console.log(str);
+    console.log(str) 
 }
