@@ -279,24 +279,6 @@ const ticketSections = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ];
 
-for(guest of tickets) {
-    var welcomeStr = `Welcome, ${guest.name}!`;
-
-    if(guest.seats === 1) {
-        welcomeStr += " You may sit anywhere"
-    } else {
-        welcomeStr += " You and your party may sit anywhere"
-    }
-
-    if(guest.type === 'premium') {
-        welcomeStr += ` in the first 3 rows of the ${guest.section} section.`
-    } else {
-        welcomeStr += ` except the first 3 rows of the ${guest.section} section.`
-    }
-
-    welcomeStr += "\nPlease be sure to leave no seats between you."
-    console.log(welcomeStr);
-}
 
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
@@ -337,37 +319,4 @@ const tickets = [
   {amount: 80.00, discount: true}, 
   {amount: 90.00}, 
   {amount: 50.00, discount: true} 
-];
-
-for(ticket of tickets) {
-    let msg = "";
-    let credits = 0;
-    
-    if(ticket.discount) {
-        drink += 10;
-    }
-    if(ticket.zombie) {
-        credits += 10;
-    }
-    
-    if(ticket.amount == 50) {
-        msg = "STANDARD";
-    } else if(ticket.amount == 65) {
-        msg = "PREMIER";
-    } else if (ticket.amount == 90) {
-        console.log("PREMIER PLUS");
-        continue; 
-    } else if (ticket.amount == 80 && ticket.discount) {
-        console.log("PREMIER PLUS");
-        continue;
-    } else {
-        console.log("ERROR: INVALID TICKET");
-        continue;
-    }
-
-      if(drink > 0) {
-        msg += "$" + credits + " DRINKS"
-    }
-
-    console.log(msg);
-}
+]
