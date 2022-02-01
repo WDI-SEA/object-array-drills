@@ -340,16 +340,16 @@ const tickets = [
   {amount: 80.00, discount: true},
   {amount: 90.00},
   {amount: 50.00, discount: true}
-  {amount: 50.00, discount: false, zombie: true}, //Standard tix 1 drink!
-  {amount: 66.00, discount: true,  zombie: false},//error ticket not $60
-  {amount: 50.00}, //standard, no drinks
-  {amount: 65.00, discount: true,  zombie: true},// premier 2drink 
-  {amount: 90.00, discount: false},//premier plus
-  {amount: 50.00, discount: true,  zombie: false},//standard 1 drink
-  {amount: 50.00, zombie:   true}, //standard 1 drink
-  {amount: 80.00, discount: true}, //$10 drinks premier plus
-  {amount: 90.00}, //premier plus no freebies
-  {amount: 50.00, discount: true} //standard tix 1 drink
+  {amount: 50.00, discount: false, zombie: true}, 
+  {amount: 66.00, discount: true,  zombie: false},
+  {amount: 50.00}, 
+  {amount: 65.00, discount: true,  zombie: true},
+  {amount: 90.00, discount: false},
+  {amount: 50.00, discount: true,  zombie: false},
+  {amount: 50.00, zombie:   true}, 
+  {amount: 80.00, discount: true}, 
+  {amount: 90.00}, 
+  {amount: 50.00, discount: true} 
 ]  
 
 tickets.forEach((ticket) => {
