@@ -1,3 +1,5 @@
+// dot notation is used for objects
+
 ////////////////////////////////////////////////
 // Part 1: Working With Data Structures
 ////////////////////////////////////////////////
@@ -49,8 +51,8 @@ const album3 = {
 //    album3's formats
 // Check out the Array.push method!
 
-album2.albumDetails.formats[0]
-console.log(album2.albumDetails.formats[0])
+// album2.albumDetails.formats[0]
+// console.log(album2.albumDetails.formats[0])
 
 album3.albumDetails.formats.push(album2.albumDetails.formats[0])
 console.log(album3.albumDetails.formats)
@@ -90,7 +92,7 @@ const album5 = {
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
-album5.formats = ['CD', 'Cassette', 'LP']
+album5.albumDetails.formats = ['CD', 'Cassette', 'LP']
 console.log(album5)
 
 //
@@ -128,7 +130,7 @@ const album7 = {
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
 
-album7.albumDetails.labels = album7.albumDetails.labels.split(',')
+album7.albumDetails.labels = album7.albumDetails.labels.split(',') // ['Sire' , 'EMI']
 console.log(album7)
 
 /////////////////////////////////////////////////////
@@ -166,7 +168,7 @@ band.name = "Talking Heads"
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
 
-band.members = ['David Byrne']
+band.members = ["David Byrne"]
 
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
@@ -175,7 +177,7 @@ band.albums = talkingHeadsAlbums
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members array.
 
-band.members.push('Tiny Weymouth', 'Chris Franz', 'Jerry Harrison')
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
 
 
 ////////////////////////////////////////////////
@@ -187,7 +189,7 @@ band.members.push('Tiny Weymouth', 'Chris Franz', 'Jerry Harrison')
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 
-if (talkingHeadsAlbums.length > 6) {
+if (talkingHeadsAlbums.length >= 6) {
   console.log("Talking Heads were a prolific band")
 } else {
   console.log("Talking heads didn't have much output.")
@@ -218,15 +220,30 @@ if (oddEvenAlbums % 2 === 0) {
 
 const oddEvenAlbums = talkingHeadsAlbums.length
 
-if (oddEvenAlbums % 2 === 0) {
-  console.log(`The number ${oddEvenAlbums} is disvisible by 2`)
+
+
+if (oddEvenAlbums === 0) {
+  console.log("The number 0 is not divisible by 2 or 3 ")
+} else if (oddEvenAlbums % 2 === 0 && oddEvenAlbums % 3 === 0) {
+  console.log(`The number ${oddEvenAlbums} is divisible by 2 and 3`)
 } else if (oddEvenAlbums % 3 === 0) {
-  console.log(`The number ${oddEvenAlbums} is disvisible by 3`)
-} else if (oddEvenAlbums % 2 === 0 && oddEvenAlbums % 2 === 0) {
-  console.log(`The number ${oddEvenAlbums} is disvisible by 2 and 3`)
-} else if (oddEvenAlbums === 0) {
-  console.log(`The number ${oddEvenAlbums} is not disvisible by 2 and 3`)
+  console.log(`The number ${oddEvenAlbums} is divisible by 3`)
+} else if (oddEvenAlbums % 2 === 0) {
+  console.log(`The number ${oddEvenAlbums} is divisible by 2`)
+} else {
+  console.log(`The number ${oddEvenAlbums} is not divisible by 2 or 3`)
 }
+
+// if (oddEvenAlbums % 2 === 0) {
+//   console.log(`The number ${oddEvenAlbums} is disvisible by 2`)
+// } else if (oddEvenAlbums % 3 === 0) {
+//   console.log(`The number ${oddEvenAlbums} is disvisible by 3`)
+// } else if (oddEvenAlbums % 2 === 0 && oddEvenAlbums % 2 === 0) {
+//   console.log(`The number ${oddEvenAlbums} is disvisible by 2 and 3`)
+// } else if (oddEvenAlbums === 0) {
+//   console.log(`The number ${oddEvenAlbums} is not disvisible by 2 and 3`)
+// }
+
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
@@ -260,11 +277,11 @@ let sireTally = 0
 talkingHeadsAlbums.forEach((album) => {
   if (album.albumDetails.label === 'Sire') {
     sireTally++
-}
-  if(album.albumDetails.labels) {
-  if (album.albumDetails.labels.includes('Sire')) {
-    sireTally++
-  }
+  }  // check if exists
+  if (album.albumDetails.labels) {
+    if (album.albumDetails.labels.includes('Sire')) {   // check if it has sire
+      sireTally++
+    }
   }
 })
 
@@ -314,7 +331,7 @@ ticketSections.forEach((ticket) => {
   if (ticket.type === 'premium') {
     if (ticket.seats === 1) {
       console.log(`Welcome, ${ticket.name}! You may sit anywhere in the first 3 rows of the ${ticket.section} section.`)
-    } else  {
+    } else {
       console.log(`Welcome, ${ticket.name}! You and your party may sit anywhere in the first 3 rows of the ${ticket.section} section. Please be sure to leave no seats between you.`)
     }
   } if (ticket.type === 'standard') {
@@ -325,7 +342,6 @@ ticketSections.forEach((ticket) => {
     }
   }
 })
-
 
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
@@ -366,16 +382,16 @@ const tickets = [
   { amount: 80.00, discount: true },
   { amount: 90.00 },
   { amount: 50.00, discount: true }
-]  
+]
 
 // Strict inequality (!==)
 
 tickets.forEach((ticket) => {
   if (ticket.discount === true && ticket.zombie === true) {
-    if(ticket.amount === 50) {
+    if (ticket.amount === 50) {
       console.log('STANDARD $20 DRINKS')
     } else if (ticket.amount === 65) {
-      console.log('PREMIER $20 DRINKS') 
+      console.log('PREMIER $20 DRINKS')
     } else if (ticket.amount === 90 || ticket.amount === 80) {
       console.log('PREMIER PLUS $20 DRINKS')
     } else {
@@ -385,7 +401,7 @@ tickets.forEach((ticket) => {
     if (ticket.amount === 50) {
       console.log('STANDARD $10 DRINKS')
     } else if (ticket.amount === 65) {
-      console.log('PREMIER $10 DRINKS') 
+      console.log('PREMIER $10 DRINKS')
     } else if (ticket.amount === 90 || ticket.amount === 80) {
       console.log('PREMIER PLUS $10 DRINKS')
     } else {
@@ -395,17 +411,17 @@ tickets.forEach((ticket) => {
     if (ticket.amount === 50) {
       console.log('STANDARD $10 DRINKS')
     } else if (ticket.amount === 65) {
-      console.log('PREMIER $10 DRINKS') 
+      console.log('PREMIER $10 DRINKS')
     } else if (ticket.amount === 90 || ticket.amount === 80) {
       console.log('PREMIER PLUS $10 DRINKS')
     } else {
       console.log('ERROR: INVALID TICKET')
     }
-   } else if (ticket.discount !== true && ticket.zombie !== true) {
+  } else if (ticket.discount !== true && ticket.zombie !== true) {
     if (ticket.amount === 50) {
       console.log('STANDARD')
     } else if (ticket.amount === 65) {
-      console.log('PREMIER') 
+      console.log('PREMIER')
     } else if (ticket.amount === 90 || ticket.amount === 80) {
       console.log('PREMIER PLUS')
     } else {
@@ -413,3 +429,4 @@ tickets.forEach((ticket) => {
     }
   }
 })
+
