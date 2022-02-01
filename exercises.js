@@ -95,9 +95,8 @@ const album6 = {
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
 
- album6.albumDetails.labels = album6.albumDetails.labels[1].toUpperCase()
- console.log(album6)
-
+ album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase()
+console.log(album6)
 
 const album7 = {
   title: "True Stories",
