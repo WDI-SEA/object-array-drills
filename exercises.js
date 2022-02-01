@@ -13,7 +13,9 @@ const album1 = {
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
-  console.log(album1.albumDetails.label)
+  
+const label = album1.albumDetails.label
+console.log(label)
 
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
@@ -39,19 +41,17 @@ const album3 = {
   }
 }  
 
-
-
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
-
-album3.albumDetails.formats.push("LP")
+let newFormat = album2.albumDetails.formats[0]
+album3.albumDetails.formats.push(newFormat)
 console.log(album3)
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
 
-album3.albumDetails.released = new Date("October 8, 1980")
+album3.albumDetails.released = new Date("August 3, 1979")
 console.log(album3)
 
 const album4 = {
@@ -80,8 +80,7 @@ const album5 = {
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
-album5.albumDetails.formats = []
-album5.albumDetails.formats.push("CD", "Cassette", "LP")
+album5.albumDetails.formats = ["CD", "Cassette", "LP"]
 console.log(album5)
 
 const album6 = {
@@ -97,7 +96,6 @@ const album6 = {
 // google how to make a string uppercase in js!
 
  album6.albumDetails.labels = album6.albumDetails.labels[1].toUpperCase()
-
  console.log(album6)
 
 
@@ -235,12 +233,12 @@ for(album of talkingHeadsAlbums) {
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
 
-let sireTally = 0
-for(album of talkingHeadsAlbums) {
-  if(albumDetails.album === "Sire") {
-    sireTally +++
-  }
-}
+// let sireTally = 0
+// for(album of talkingHeadsAlbums) {
+//   if(albumDetails.album === "Sire") {
+//     sireTally +++
+//   }
+// }
 
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
