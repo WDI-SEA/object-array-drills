@@ -1,7 +1,7 @@
 // Part 1: Working With Data Structures
 ////////////////////////////////////////////////
 
-var album1 = {
+const album1 = {
   title: "Talking Heads",
   albumDetails: {
     released: new Date("September 16, 1977"),
@@ -14,9 +14,11 @@ var album1 = {
 //    variable.
 
 let sensiblyNamedVariable = album1.albumDetails.label;
+console.log("1. " + sensiblyNamedVariable)
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 album1.title = "Talking Heads: 77";
+console.log("2. " + album1.title)
 
 const album2 = {
   title: "More Songs About Buildings and Food",
@@ -41,11 +43,13 @@ const album3 = {
 // Check out the Array.push method!
 
 album3.albumDetails.formats.push(album2.albumDetails.formats[0]);
+console.log("3. " + album3.albumDetails.formats)
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
 
 album3.released = new Date('August 3, 1979');
+console.log("4. " + album3.released)
 
 const album4 = {
   title: "Remain in Light",
@@ -57,6 +61,7 @@ const album4 = {
 
 // 5. Add the label "Sire" to album4's details
 album4.albumDetails.label = "Sire";
+console.log("5. " + album4.albumDetails.label)
 
 const album5 = {
   title: "Speaking in Tongues",
@@ -68,7 +73,7 @@ const album5 = {
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 album5.albumDetails.formats = ["CD", "Cassette", "LP"];
-
+console.log("6. " + album5.albumDetails.formats)
 
 const album6 = {
   title: "Little Creatures",
@@ -82,6 +87,7 @@ const album6 = {
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
 album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase();
+console.log("7. " + album6.albumDetails.labels[1])
 
 const album7 = {
   title: "True Stories",
@@ -95,11 +101,13 @@ const album7 = {
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
+album7.albumDetails.labels = album7.albumDetails.labels.split(",");
+console.log("8. " + album7.albumDetails.labels)
 
 /////////////////////////////////////////////////////
 // Part 2: More Tasks About Datatypes and Structures
 /////////////////////////////////////////////////////
-album7.albumDetails.labels = album7.albumDetails.labels.split(",");
+
 
 const album8 = {
   title: "Naked",
@@ -121,21 +129,6 @@ const talkingHeadsAlbums = [
   album8
 ]
 
-// 1. Create an object literal called `band`.
-
-// 2. Give it the property `name` and set it to "Talking Heads"
-
-// 3. Give it the property `members` and set it to an array with a single
-//    string, "David Byrne", in it.
-
-// 4. Give it the property `albums` and set it to the array stored in the
-//    variable talkingHeadsAlbums
-
-// 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
-//    array.
-/////////////////////////////////////////////////////
-// Part 3: More Tasks About Datatypes and Structures
-/////////////////////////////////////////////////////
 
 // 1. Create an object literal called `band`.
 band = {};
@@ -279,6 +272,22 @@ const ticketSections = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ];
 
+    ticketSections.forEach((ticketSection) => {
+      if(ticketSection.type === "premium"){
+        if(ticketSection.seats === 1){
+          console.log(`Welcome, ${ticketSection.name}! You may sit anywhere in the first 3 rows of the ${ticketSection.section} section.`)
+        } else {
+          console.log(`Welcome, ${ticketSection.name}! You and your party may sit anywhere on the first 3 rows of the ${ticketSection.section} section. Please make sure there are no seats between you.`)
+        }
+      } if(ticketSection.type === "standard"){
+        if(ticketSection.seats === 1) {
+          console.log(`Welcome, ${ticketSection.name}! You may sit anywhere except the first 3 rows of the ${ticketSection.section} section.`)
+        } else {
+          console.log(`Welcome, ${ticketSection.name}! You and your party may sit anywhere except the first 3 rows of the ${ticketSection.section} section. Please make sure there are no seats between you.`)
+        }
+      }
+    })
+
 
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
@@ -308,15 +317,15 @@ const ticketSections = [
 //    - {amount: 90.00}                                  => "PREMIER PLUS"
 //    - {amount: 50.00, discount: true,  zombie: true}   => "STANDARD $20 DRINKS"
 
-const tickets = [
-  {amount: 50.00, discount: false, zombie: true}, 
-  {amount: 60.00, discount: true,  zombie: false}, 
-  {amount: 50.00},  
-  {amount: 65.00, discount: true,  zombie: true}, 
-  {amount: 90.00, discount: false},
-  {amount: 50.00, discount: true,  zombie: false}, 
-  {amount: 50.00, zombie:   true},
-  {amount: 80.00, discount: true}, 
-  {amount: 90.00}, 
-  {amount: 50.00, discount: true} 
-]
+// const tickets = [
+//   {amount: 50.00, discount: false, zombie: true}, 
+//   {amount: 60.00, discount: true,  zombie: false}, 
+//   {amount: 50.00},  
+//   {amount: 65.00, discount: true,  zombie: true}, 
+//   {amount: 90.00, discount: false},
+//   {amount: 50.00, discount: true,  zombie: false}, 
+//   {amount: 50.00, zombie:   true},
+//   {amount: 80.00, discount: true}, 
+//   {amount: 90.00}, 
+//   {amount: 50.00, discount: true} 
+// ]
