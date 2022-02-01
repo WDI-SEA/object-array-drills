@@ -131,7 +131,7 @@ const talkingHeadsAlbums = [
 
 
 // 1. Create an object literal called `band`.
-band = {};
+const band = {};
 
 // 2. Give it the property `name` and set it to "Talking Heads"
 band.name = "Talking Heads";
@@ -186,16 +186,15 @@ if(numAlbums % 2 === 0) {
 //    with Y being the number of albums.
 //let numAlbums = talkingHeadsAlbums.length;
 
-if(numAlbums === 0) {
-    console.log("The number 0 is not divisible by 2 or 3 ")
-} else if(numAlbums % 2 === 0 && numAlbums % 3 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 2 and 3`);
-} else if(numAlbums % 3 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 3`);
-} else if(numAlbums % 2 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 2`);
+let y = numAlbums
+if(y % 2 === 0 && y % 3 === 0) {
+    console.log(`The number ${y} is divisible by 2 and 3`);
+} else if(y % 3 === 0) {
+    console.log(`The nu2mber ${y} is divisible by 3`);
+} else if(y % 2 === 0) {
+    console.log(`The number ${y} is divisible by 2`);
 } else {
-    console.log(`The number ${numAlbums} is not divisible by 2 or 3`);
+    console.log(`The number ${y} is not divisible by 2 or 3`);
 }
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
