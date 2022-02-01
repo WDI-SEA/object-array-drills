@@ -86,7 +86,8 @@ const album6 = {
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
-album6.albumDetails.labels[1].toUpperCase()
+// album6.albumDetails.labels[1].toUpperCase() //this doesnt replace the lowercase emi in the array, you need to assign it again.
+album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase()
 console.log(album6.albumDetails.labels[1].toUpperCase())
 
 const album7 = {
@@ -125,7 +126,7 @@ const talkingHeadsAlbums = [
   album5,
   album6,
   album7,
-  album8,
+  // album8,
   // 1,2,3,4,5,6,7,8,9,10,11
 ]  
 
@@ -136,7 +137,7 @@ const band = {
 }
 
 // 2. Give it the property `name` and set it to "Talking Heads"
-band.name = "Talking Head"
+band.name = "Talking Heads"
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
 band.members = ["David Byrne"]
@@ -185,15 +186,28 @@ if(talkingHeadsAlbums.length >= 6){
 //
 //    with Y being the number of albums.
 
-if(talkingHeadsAlbums.length % 2 === 0 && talkingHeadsAlbums.length % 3 === 0){
-  console.log(`The number ${talkingHeadsAlbums.length} is divisible by 2 and 3`)
-} else if (talkingHeadsAlbums.length % 2 !== 0 && talkingHeadsAlbums.length % 3 !== 0) {
-  console.log(`The number ${talkingHeadsAlbums.length} is not divisible by 2 and 3`)
-} else if (talkingHeadsAlbums.length % 2 === 0) {
-  console.log(`The number ${talkingHeadsAlbums.length} is divisible by 2.`)
+// if(talkingHeadsAlbums.length % 2 === 0 && talkingHeadsAlbums.length % 3 === 0){
+//   console.log(`The number ${talkingHeadsAlbums.length} is divisible by 2 and 3`)
+// } else if (talkingHeadsAlbums.length % 2 !== 0 && talkingHeadsAlbums.length % 3 !== 0) {
+//   console.log(`The number ${talkingHeadsAlbums.length} is not divisible by 2 and 3`)
+// } else if (talkingHeadsAlbums.length % 2 === 0) {
+//   console.log(`The number ${talkingHeadsAlbums.length} is divisible by 2.`)
+// } else if (talkingHeadsAlbums.length % 3 === 0) {
+//   console.log(`The number ${talkingHeadsAlbums.length} is divisible by 3.`)
+// } 
+if(talkingHeadsAlbums.length % 2 === 0){
+  if(talkingHeadsAlbums.length % 3 === 0){
+    console.log(`The number ${talkingHeadsAlbums.length} is divisible by 2 and 3`)
+  } else {
+    console.log(`The number ${talkingHeadsAlbums.length} is divisible by 2`)
+  }
 } else if (talkingHeadsAlbums.length % 3 === 0) {
-  console.log(`The number ${talkingHeadsAlbums.length} is divisible by 3.`)
-} 
+  console.log(`The number ${talkingHeadsAlbums.length} is divisible by 2`)
+} else {
+  console.log(`The number ${talkingHeadsAlbums.length} is neither divisble by 2 or 3.`)
+}
+
+
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
 
