@@ -205,8 +205,7 @@ let sireTally = 0;
 talkingHeadsAlbums.forEach((element)=>{
   //iterate over each element
   //check to see if any arrays have "sire" in them - incremement sireTally
-  console.log(`${element.albumDetails.label} ${typeof element.albumDetails.label} contains a single label`)
-  console.log(`${element.albumDetails.labels} ${typeof element.albumDetails.label} contains multiple labels`)
+  
   //check to see if any strings have "sire" in them - increment sireTally
   if(element.albumDetails.label === "Sire"){
   sireTally++
