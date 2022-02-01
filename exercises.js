@@ -339,7 +339,7 @@ const tickets = [
   {amount: 50.00, zombie:   true},
   {amount: 80.00, discount: true},
   {amount: 90.00},
-  {amount: 50.00, discount: true}
+  {amount: 50.00, discount: true},
   {amount: 50.00, discount: false, zombie: true}, 
   {amount: 66.00, discount: true,  zombie: false},
   {amount: 50.00}, 
