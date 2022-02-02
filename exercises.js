@@ -424,7 +424,6 @@ const album8 = {
 }  
 
 const band = {}
-}
 
 // 1. Create an object literal called `band`. above
 
