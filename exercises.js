@@ -183,8 +183,8 @@ if (talkingHeadsAlbums.length >= 6) {
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 
-let albumLength = talkingHeadsAlbums.length
-if (talkingHeadsAlbums.length % 2 === 0) {
+const albumLength = talkingHeadsAlbums.length
+if (albumLength % 2 === 0) {
   console.log("The number " + albumLength + " is even.")
 } else {
   console.log("The number " + albumLength + " is odd.")
@@ -201,14 +201,24 @@ if (talkingHeadsAlbums.length % 2 === 0) {
 //    with Y being the number of albums.
 
 let albumNumber = talkingHeadsAlbums.length
-if (talkingHeadsAlbums % 2 === 0){
-  console.log("The number " + albumNumber + " is divisible by 2")
-} else if (talkingHeadsAlbums % 3 === 0){
-  console.log("The number  " + albumNumber + " is divisible by 3")
-} else if (talkingHeadsAlbums % 2 === 0 && talkingHeadsAlbums % 3 === 0){
-  console.log("The number  " + albumNumber + " is divisible by 2 and 3")
-} else {
+// if (talkingHeadsAlbums % 2 === 0){
+//   console.log("The number " + albumNumber + " is divisible by 2")
+// } else if (talkingHeadsAlbums % 3 === 0){
+//   console.log("The number  " + albumNumber + " is divisible by 3")
+// } else if (talkingHeadsAlbums % 2 === 0 && talkingHeadsAlbums % 3 === 0){
+//   console.log("The number  " + albumNumber + " is divisible by 2 and 3")
+// } else {
+//   console.log("The number " + albumNumber + " is not divisible by 2 or 3")
+// }
+
+if (albumNumber % 2 != 0 && album % 3 != 0) {
   console.log("The number " + albumNumber + " is not divisible by 2 or 3")
+} else if (albumNumber % 2 === 0 && albumNumber & 3 === 0 ){
+  console.log("The number " + albumNumber + " is divisible by 2 or 3.")
+} else if (albumNumber % 2 === 0){
+  console.log("The number is " + albumNumber + " is divisible by 2.")
+} else {
+  console.log("The number is " + albumNumber + " is divisible by 3.")
 }
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
@@ -221,9 +231,7 @@ if (talkingHeadsAlbums % 2 === 0){
 
 // 1. Use a for loop to print out the name of each Talking Heads album
 
-for(album of talkingHeadsAlbums) {
-  console.log(album.title)
-}
+
 
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
@@ -232,12 +240,19 @@ for(album of talkingHeadsAlbums) {
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
 
-// let sireTally = 0
-// for(album of talkingHeadsAlbums) {
-//   if(albumDetails.album === "Sire") {
-//     sireTally +++
-//   }
-// }
+let sireTally = 0
+talkingHeadsAlbums.forEach(album => {
+  if(album.albumDetails.label === "Sire"){
+    sireTally++
+    //check if it exists
+  } else if (album.albumDetails.label) {
+    // check if it has sire
+    if (album.albumDetails.label.includes("Sire")){
+      sireTally++
+    }
+  }
+
+})
 
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
