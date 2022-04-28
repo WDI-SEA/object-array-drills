@@ -14,7 +14,11 @@ const album1 = {
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
 
+const albumOneLabel = album1.albumDetails.label
+
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+
+album1.title = 
 
 const album2 = {
   title: "More Songs About Buildings and Food",
@@ -33,10 +37,15 @@ const album3 = {
     formats:  ["Cassette"]
   }
 }  
-
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
+
+let lp = album2.albumDetails.formats[0]
+
+album3.albumDetails.formats[lp]
+console.log(album3)
+
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
@@ -72,6 +81,9 @@ const album6 = {
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
+
+console.log(album6.albumDetails.labels[1]).toLocaleUpperCase()
+
 
 const album7 = {
   title: "True Stories",
@@ -109,8 +121,15 @@ const talkingHeadsAlbums = [
   album7,
   album8
 ]  
+console.log(talkingHeadsAlbums)
 
 // 1. Create an object literal called `band`.
+const myObj = {
+  
+}
+const myArr = [
+  
+]
 
 // 2. Give it the property `name` and set it to "Talking Heads"
 
@@ -132,11 +151,24 @@ const talkingHeadsAlbums = [
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 
+if (talkingHeadsAlbums.length >= 6) {
+  console.log("Talking Heads were a prolific band")
+  else {
+    console.log("Talking heads didn't have much output.")
+  }
+}
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 
+const num = talkingHeadsAlbums.length
+
+if (talkingHeadsAlbums.length % 2 === 0) {
+console.log('the number' + talkingHeadsAlbums.length + 'is even')
+}  else {
+  console.log('the number' + talkingHeadsAlbums.length + 'is odd'  
+}
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
 //    console.log one of:
@@ -163,6 +195,17 @@ const talkingHeadsAlbums = [
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
 
+let sireTally = 0
+for (let i = 0; i < talkingHeadsAlbums.length; i++) {
+  if (talkingHeadsAlbums[i].albumDetails.labels) {
+    if (talkingHeadsAlbums[i].albumDetails.labels.includes('Sire')){
+      sireTally++
+    }
+  } else if (talkingHeadsAlbums[i].albumDetails.label === 'Sire') {
+    sireTally++
+  }
+}
+console.log(sireTally)
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
