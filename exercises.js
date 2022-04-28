@@ -6,40 +6,53 @@ const album1 = {
   title: "Talking Heads",
   albumDetails: {
     released: new Date("September 16, 1977"),
-    label:    "Sire",
-    formats:  ["LP"]
+    label: "Sire",
+    formats: ["LP"]
   }
-}  
+}
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
+//const label = album1.albumDetails.label
+//  console.log(label)
+const albumOneLabel = album1.albumDetails.label
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+album1.title = "Talking Heads: 77"
+  console.log(album1.title)
+
 
 const album2 = {
   title: "More Songs About Buildings and Food",
   albumDetails: {
     released: new Date("July 14, 1978"),
-    label:    "Sire",
-    formats:  ["LP", "8-track"]
+    label: "Sire",
+    formats: ["LP", "8-track"]
   }
-}  
+}
 
 const album3 = {
   title: "Fear of Music",
   albumDetails: {
     released: "August 3, 1979",
-    label:    "Sire",
-    formats:  ["Cassette"]
+    label: "Sire",
+    formats: ["Cassette"]
   }
-}  
+}
 
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
+//album3.albumDetails.formats.push("LP")
+ // console.log(album3.albumDetails.formats)
+
+let LP = album3.albumDetails
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
+album3.albumDetails.released.pull("August 3, 1979")
+album3.albumDetails.release = date
+
 
 const album4 = {
   title: "Remain in Light",
@@ -47,40 +60,46 @@ const album4 = {
     released: new Date("October 8, 1980"),
     formats: ["Cassette", "LP"]
   }
-}  
+}
 
 // 5. Add the label "Sire" to album4's details
+album4.albumDetails.label = "Sire"
 
 const album5 = {
   title: "Speaking in Tongues",
   albumDetails: {
     released: new Date("May 31, 1983"),
-    label:    "Sire"
+    label: "Sire"
   }
-}  
+}
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
+album5.albumDetails.formats = ['CD', "Cassette", "LP"]
+
 
 const album6 = {
   title: "Little Creatures",
   albumDetails: {
     released: new Date("June 10, 1985"),
-    labels:   ["Sire", "emi"],
-    formats:  ["CD", "cassette", "LP"]
+    labels: ["Sire", "emi"],
+    formats: ["CD", "cassette", "LP"]
   }
-}  
+}
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
+console.log(album6.albumDetails.labels[1].toUpperCase();
+console.log(album6)
+
 
 const album7 = {
   title: "True Stories",
   albumDetails: {
     released: new Date("October 7, 1986"),
-    labels:   "Sire, EMI",
-    formats:  ["CD", "cassette", "LP"]
+    labels: "Sire, EMI",
+    formats: ["CD", "cassette", "LP"]
   }
-}  
+}
 
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
@@ -94,10 +113,10 @@ const album8 = {
   title: "Naked",
   albumDetails: {
     released: new Date("March 15, 1988"),
-    labels:    ["Sire", "EMI"],
-    formats:  ["CD", "cassette", "LP"]
+    labels: ["Sire", "EMI"],
+    formats: ["CD", "cassette", "LP"]
   }
-}  
+}
 
 const talkingHeadsAlbums = [
   album1,
@@ -108,10 +127,18 @@ const talkingHeadsAlbums = [
   album6,
   album7,
   album8
-]  
+]
+
+console.log(talkingHeadsAlbums)
 
 // 1. Create an object literal called `band`.
+const myObj = {
+  
+}
 
+const my Arr = [
+  
+]
 // 2. Give it the property `name` and set it to "Talking Heads"
 
 // 3. Give it the property `members` and set it to an array with a single
@@ -131,11 +158,24 @@ const talkingHeadsAlbums = [
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
+(talkingHeadsAlbums.legnth >= 6) {
+  console.log('Talking Heads were a prolific band')
+} else {
+  console.log("Talking heads didn't have much output.")
+}
 
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
+
+const num = talkingHeadsAlbums.length
+
+if (num % 2 === 0) {
+  console.log('the number' + num + ' is even')
+} else {
+  console.log('the number' + num + ' is odd')
+}
 
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
@@ -162,6 +202,19 @@ const talkingHeadsAlbums = [
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
+// follow along
+let sireTally = 0 
+for (let i = 0; i < talkingHeadsAlbums.length; i++) {
+  if (talkingHeadsAlbums[i].albumDetails.label) {
+    if (talkingHeadsAlbums[i].albumDetails.labels.includes('Sire')) {
+      sireTally++
+    } else if {
+      talkingHeadsAlbums[i].albumsDetails.label === ('Sire') {
+        sireTally++
+      }
+    }
+  }
+}
 
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
@@ -197,13 +250,13 @@ const talkingHeadsAlbums = [
 //     Please be sure to leave no seats between you."
 
 const ticketSections = [
-  {name: "Boutros Boutros-Ghali", section: "center", type: "premium",  seats: 1},
-  {name: "Ann Richards",          section: "left",   type: "premium",  seats: 2},
-  {name: "George Will",           section: "left",   type: "standard", seats: 2},
-  {name: "Marion Barry",          section: "center", type: "standard", seats: 8},
-  {name: "Warren Christopher",    section: "right",  type: "standard", seats: 1},
-  {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
-]  
+  { name: "Boutros Boutros-Ghali", section: "center", type: "premium", seats: 1 },
+  { name: "Ann Richards", section: "left", type: "premium", seats: 2 },
+  { name: "George Will", section: "left", type: "standard", seats: 2 },
+  { name: "Marion Barry", section: "center", type: "standard", seats: 8 },
+  { name: "Warren Christopher", section: "right", type: "standard", seats: 1 },
+  { name: "Bob Dole", section: "center", type: "premium", seats: 3 }
+]
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
@@ -233,14 +286,14 @@ const ticketSections = [
 //    - {amount: 50.00, discount: true,  zombie: true}   => "STANDARD $20 DRINKS"
 
 const tickets = [
-  {amount: 50.00, discount: false, zombie: true},
-  {amount: 60.00, discount: true,  zombie: false},
-  {amount: 50.00},
-  {amount: 65.00, discount: true,  zombie: true},
-  {amount: 90.00, discount: false},
-  {amount: 50.00, discount: true,  zombie: false},
-  {amount: 50.00, zombie:   true},
-  {amount: 80.00, discount: true},
-  {amount: 90.00},
-  {amount: 50.00, discount: true}
-]  
+  { amount: 50.00, discount: false, zombie: true },
+  { amount: 60.00, discount: true, zombie: false },
+  { amount: 50.00 },
+  { amount: 65.00, discount: true, zombie: true },
+  { amount: 90.00, discount: false },
+  { amount: 50.00, discount: true, zombie: false },
+  { amount: 50.00, zombie: true },
+  { amount: 80.00, discount: true },
+  { amount: 90.00 },
+  { amount: 50.00, discount: true }
+]
