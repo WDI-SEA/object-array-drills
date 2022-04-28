@@ -9,8 +9,10 @@ const album1 = {
     label:    "Sire",
     formats:  ["LP"]
   }
-}  
+}
+let sireLabel = album1.albumDetails.label
 
+album1.title = "Talking Heads: 77"
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
 
@@ -23,7 +25,7 @@ const album2 = {
     label:    "Sire",
     formats:  ["LP", "8-track"]
   }
-}  
+}
 
 const album3 = {
   title: "Fear of Music",
@@ -32,7 +34,10 @@ const album3 = {
     label:    "Sire",
     formats:  ["Cassette"]
   }
-}  
+}
+let lp = album2.albumDetails.formats[0]
+album3.albumDetails.formats.push(lp)
+album3.albumDetails.released = new Date('October 12, 1980')
 
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
@@ -47,7 +52,8 @@ const album4 = {
     released: new Date("October 8, 1980"),
     formats: ["Cassette", "LP"]
   }
-}  
+}
+album4.albumDetails['label'] = 'Sire'
 
 // 5. Add the label "Sire" to album4's details
 
@@ -57,7 +63,8 @@ const album5 = {
     released: new Date("May 31, 1983"),
     label:    "Sire"
   }
-}  
+}
+album5['formats'] = ['CD', 'cassette', 'LP']
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
@@ -68,7 +75,8 @@ const album6 = {
     labels:   ["Sire", "emi"],
     formats:  ["CD", "cassette", "LP"]
   }
-}  
+}
+album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase()
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
@@ -80,7 +88,8 @@ const album7 = {
     labels:   "Sire, EMI",
     formats:  ["CD", "cassette", "LP"]
   }
-}  
+}
+album7.albumDetails.labels = album7.albumDetails.labels.split()
 
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
@@ -97,9 +106,9 @@ const album8 = {
     labels:    ["Sire", "EMI"],
     formats:  ["CD", "cassette", "LP"]
   }
-}  
+}
 
-const talkingHeadsAlbums = [
+let talkingHeadsAlbums = [
   album1,
   album2,
   album3,
@@ -108,7 +117,7 @@ const talkingHeadsAlbums = [
   album6,
   album7,
   album8
-]  
+]
 
 // 1. Create an object literal called `band`.
 
@@ -122,12 +131,24 @@ const talkingHeadsAlbums = [
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
-
+let band = {
+  name: 'Talking Heads',
+  members: ['David Byrne'],
+  albums: talkingHeadsAlbums,
+}
+band.members.push('Tiny Weymouth')
+console.log(band)
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
 ////////////////////////////////////////////////
 
 // 1. Write a conditional to console.log "Talking Heads were a prolific band"
+if (talkingHeadsAlbums.length >= 6){
+  console.log('Talking Heads were a prolific band')
+}
+else {
+  console.log("Talking Heads didn't have much output")
+}
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
@@ -136,7 +157,33 @@ const talkingHeadsAlbums = [
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
+if (talkingHeadsAlbums.length%2 === 0){
+  console.log(talkingHeadsAlbums.length + " is even")
+}
+else{
+  console.log(talkingHeadsAlbums.length + "is even")
+}
 
+
+
+
+
+
+
+
+let tha = 7
+if (tha%2 === 0 && talkingHeadsAlbums%3 === 0){
+  console.log('the number is divisable by 2 and 3')
+}
+else if (tha%2 === 0 && tha%3 !== 0) {
+  console.log('the number is divisable by 2')
+}
+else if ((tha%2 !== 0 && tha%3 === 0)){
+  console.log('the number is divisable by 3')
+}
+else {
+  console.log('not divisable by 2 or 3')
+}
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
 //    console.log one of:
@@ -162,7 +209,17 @@ const talkingHeadsAlbums = [
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
+for (let i = 0; i < talkingHeadsAlbums.length; i++){
+  console.log(talkingHeadsAlbums[i])
+}
+let sireTally = 0
+for (let i = 0; i < talkingHeadsAlbums.length; i++){
 
+  if(talkingHeadsAlbums[i].albumDetails.label === 'Sire' || talkingHeadsAlbums[i].albumDetails.labels.includes('Sire')){
+    sireTally = sireTally + 1
+  }
+}
+console.log(sireTally)
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
@@ -183,13 +240,13 @@ const talkingHeadsAlbums = [
 //      section: "right",
 //      type: "premium",
 //      seats: 1
-//    }  
+//    }
 //    const ticket1 = {
 //      name: "Newt Gingrich",
 //      section: "center",
 //      type: "standard",
 //      seats: 4
-//    }  
+//    }
 //
 //    Messages:
 //    "Welcome, Madeline Albright! You may sit anywhere in the first 3 rows of the right section."
@@ -203,8 +260,33 @@ const ticketSections = [
   {name: "Marion Barry",          section: "center", type: "standard", seats: 8},
   {name: "Warren Christopher",    section: "right",  type: "standard", seats: 1},
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
-]  
+]
 
+for (let i = 0; i < ticketSections.length; i++) {
+  if (ticketSections[i].type === "premium" && ticketSections[i].section === 'left'){
+    console.log('welcome you may sit anywhere in the first three rows in the left section')
+  }
+  if (ticketSections[i].type === "premium" && ticketSections[i].section === 'center'){
+    console.log('welcome you may sit anywhere in the first three rows in the center section')
+  }
+  if (ticketSections[i].type === "premium" && ticketSections[i].section === 'right'){
+    console.log('welcome you may sit anywhere in the first three rows in the right section')
+  }
+
+  if (ticketSections[i].type === "standard" && ticketSections[i].section === 'left'){
+    console.log('welcome you may sit anywhere except the first three rows in the left section')
+  }
+  if (ticketSections[i].type === "standard" && ticketSections[i].section === 'center'){
+    console.log('welcome you may sit anywhere except the first three rows in the center section')
+  }
+  if (ticketSections[i].type === "standard" && ticketSections[i].section === 'right'){
+    console.log('welcome you may sit anywhere except the first three rows in the right section')
+  }
+
+  if ( ticketSections[i].seats > 1){
+    console.log(' please be sure to leave no seats between you')
+  }
+}
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
@@ -243,4 +325,30 @@ const tickets = [
   {amount: 80.00, discount: true},
   {amount: 90.00},
   {amount: 50.00, discount: true}
-]  
+]
+
+for (let i = 0 ; i < tickets.length; i ++) {
+  let message = ''
+  if (tickets[i].amount === 50){
+    message = message + 'standard'
+  }
+  if (tickets[i].amount === 65){
+    message = message + 'premier'
+  }
+  if (tickets[i].amount === 90){
+    message = message + 'premier plus'
+  }
+  if (tickets[i].zombie === true && tickets[i].discount !== true){
+    message = message + ' $10 drinks'
+  }
+  if (tickets[i].zombie !== true && tickets[i].discount === true){
+    message = message + ' $10 drinks'
+  }
+  if (tickets[i].zombie === true && tickets[i].discount === true){
+    message = message + ' $20 drinks'
+  }
+  if (tickets[i].amount !== 50 && tickets[i].amount !== 65 && tickets[i].amount !== 90){
+    message = 'Error invalid ticket'
+  }
+  console.log(message)
+}
