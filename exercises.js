@@ -284,8 +284,7 @@ const ticketSections = [
   { name: "Bob Dole", section: "center", type: "premium", seats: 3 },
 ];
 
-for (let i = 0; i < ticketSections.length; i++) {
-  const ticket = ticketSections[i];
+const messages = ticketSections.map((ticket) => {
   const seatingString =
     ticket.type === "premium"
       ? "in the first 3 rows"
@@ -297,8 +296,11 @@ for (let i = 0; i < ticketSections.length; i++) {
 
   if (ticket.seats > 1)
     message += " Please be sure to leave no seats between you.";
-  console.log(message);
-}
+
+  return message;
+});
+
+messages.forEach((message) => console.log(message));
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
