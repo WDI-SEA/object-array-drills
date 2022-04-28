@@ -10,7 +10,11 @@ const album1 = {
     formats:  ["LP"]
   }
 }  
-
+album1.albumDetails.label
+let newLabel = album1.albumDetails.label
+album1.title = "Talking Heads: 77"
+console.log(album1.title)
+console.log(newLabel)
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
 
@@ -33,7 +37,13 @@ const album3 = {
     formats:  ["Cassette"]
   }
 }  
+album2.albumDetails.formats[0]
+let addFormat = album2.albumDetails.formats[0]
+album3.albumDetails.formats.push(addFormat)
+console.log(album3.albumDetails.formats)
 
+album3.albumDetails.released = new Date(1979, 8, 3)
+console.log(album3)
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
@@ -48,7 +58,8 @@ const album4 = {
     formats: ["Cassette", "LP"]
   }
 }  
-
+album4.albumDetails.label = "Sire"
+console.log(album4)
 // 5. Add the label "Sire" to album4's details
 
 const album5 = {
@@ -58,7 +69,8 @@ const album5 = {
     label:    "Sire"
   }
 }  
-
+album5.albumDetails.formats = ["CD", "Cassette", "LP"]
+console.log(album5)
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
 const album6 = {
@@ -69,7 +81,8 @@ const album6 = {
     formats:  ["CD", "cassette", "LP"]
   }
 }  
-
+album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase();
+console.log(album6.albumDetails.labels)
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
 
@@ -81,6 +94,8 @@ const album7 = {
     formats:  ["CD", "cassette", "LP"]
   }
 }  
+album7.albumDetails.labels = album7.albumDetails.labels.split(",")
+console.log(album7.albumDetails)
 
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
@@ -110,6 +125,12 @@ const talkingHeadsAlbums = [
   album8
 ]  
 
+let band = {}
+band.name = "Talking Heads"
+band.members = ["David Byrne"]
+band.albums = talkingHeadsAlbums
+band.members.push("Chris Franz", "Jerry Harrison")
+console.log(band)
 // 1. Create an object literal called `band`.
 
 // 2. Give it the property `name` and set it to "Talking Heads"
@@ -126,6 +147,11 @@ const talkingHeadsAlbums = [
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
 ////////////////////////////////////////////////
+if (talkingHeadsAlbums.length >= 6) {
+  console.log("Talking Heads were a prolific band")
+} else {
+  console.log("Talking heads didn't have much output.")
+}
 
 // 1. Write a conditional to console.log "Talking Heads were a prolific band"
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
@@ -136,7 +162,11 @@ const talkingHeadsAlbums = [
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
-
+if (talkingHeadsAlbums.length % 2 === 0) {
+  console.log("The number " + talkingHeadsAlbums.length + " is even")
+} else {
+  conosole.log("The number " + talkingHeadsAlbums.length + " is odd")
+}
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
 //    console.log one of:
@@ -162,7 +192,15 @@ const talkingHeadsAlbums = [
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
-
+let sireTally = 0
+for (let i = 0; talkingHeadsAlbums.length; i++) {
+  if (talkingHeadsAlbums[i].albumDetails.labels) {
+    if (talkingHeadsAlbums[i].albumDetails.labels.includes('Sire')) {
+   }else if (talkingHeadsAlbums[i].albumDetails.label === 'Sire') {
+      sireTally++
+   }
+  } 
+}
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
