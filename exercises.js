@@ -131,17 +131,24 @@ const talkingHeadsAlbums = [
 ];
 
 // 1. Create an object literal called `band`.
+const band = {};
 
 // 2. Give it the property `name` and set it to "Talking Heads"
+band.name = "Talking Heads";
 
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
+band.members = ["David Byrne"];
 
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
+band.albums = talkingHeadsAlbums;
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison");
+
+console.log(band);
 
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
