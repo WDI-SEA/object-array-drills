@@ -339,3 +339,45 @@ const tickets = [
   { amount: 90.0 },
   { amount: 50.0, discount: true },
 ];
+
+const VALID_PRICES_WITHOUT_DISCOUNT = [50, 65, 90];
+const VALID_PRICES_WITH_DISCOUNT = [50, 65, 80];
+
+tickets.forEach((ticket) => {
+  let valid = true;
+
+  // Check validity
+  if (ticket.discount) {
+    if (!VALID_PRICES_WITH_DISCOUNT.includes(ticket.amount)) {
+      valid = false;
+    }
+  } else {
+    if (!VALID_PRICES_WITHOUT_DISCOUNT.includes(ticket.amount)) {
+      valid = false;
+    }
+  }
+
+  if (!valid) {
+    console.log("ERROR: INVALID TICKET");
+    return;
+  }
+
+  // Calculate drinks discount
+  let drinksDiscount = 0;
+  if (ticket.discount) drinksDiscount += 10;
+  if (ticket.zombie) drinksDiscount += 10;
+
+  let drinksString =
+    drinksDiscount === 0 ? "NO DRINKS" : `$${drinksDiscount} DRINKS`;
+
+  const TICKET_MAP = {
+    50: "STANDARD",
+    65: "PREMIER",
+    90: "PREMIER PLUS",
+    80: "PREMIER PLUS",
+  };
+
+  const ticketType = TICKET_MAP[ticket.amount];
+
+  console.log(`${ticketType} ${drinksString}`);
+});
