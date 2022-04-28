@@ -159,10 +159,19 @@ console.log(band);
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 
+if (talkingHeadsAlbums.length <= 6) {
+  console.log("Talking heads didn't have much output");
+} else {
+  console.log("Talking Heads were a prolific band");
+}
+
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
+
+const parityString = talkingHeadsAlbums.length % 2 === 0 ? "even" : "odd";
+console.log(`The number ${talkingHeadsAlbums.length} is ${parityString}`);
 
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
@@ -174,6 +183,27 @@ console.log(band);
 //
 //    with Y being the number of albums.
 
+const numAlbums = talkingHeadsAlbums.length;
+let isDivisibleString = ""; // Either 'not ' or ''
+let divisibleByString = ""; // Eg. "2 and 3" or '2 or 3'
+const divisibleBy2 = numAlbums % 2 === 0;
+const divisibleBy3 = numAlbums % 3 === 0;
+
+if (divisibleBy2 && divisibleBy3) {
+  divisibleByString = "2 and 3";
+} else if (divisibleBy2) {
+  divisibleByString = "2";
+} else if (divisibleBy3) {
+  divisibleByString = "3";
+} else {
+  isDivisibleString = "not ";
+  divisibleByString = "2 or 3";
+}
+
+console.log(
+  `The number ${numAlbums} is ${isDivisibleString}divisible by ${divisibleByString}`
+);
+
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
 
@@ -182,6 +212,9 @@ console.log(band);
 /////////////////////////////////////////////////////
 
 // 1. Use a for loop to print out the name of each Talking Heads album
+for (let i = 0; i < talkingHeadsAlbums.length; i++) {
+  console.log(talkingHeadsAlbums[i].title);
+}
 
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
@@ -189,6 +222,20 @@ console.log(band);
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
+
+let sireTally = 0;
+for (let i = 0; i < talkingHeadsAlbums.length; i++) {
+  const album = talkingHeadsAlbums[i];
+  if (album.albumDetails.label && album.albumDetails.label === "Sire") {
+    sireTally++;
+  }
+
+  if (album.albumDetails.labels && album.albumDetails.labels.includes("Sire")) {
+    sireTally++;
+  }
+}
+
+console.log(sireTally);
 
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
@@ -236,6 +283,22 @@ const ticketSections = [
   { name: "Warren Christopher", section: "right", type: "standard", seats: 1 },
   { name: "Bob Dole", section: "center", type: "premium", seats: 3 },
 ];
+
+for (let i = 0; i < ticketSections.length; i++) {
+  const ticket = ticketSections[i];
+  const seatingString =
+    ticket.type === "premium"
+      ? "in the first 3 rows"
+      : "except the first 3 rows";
+  const sectionString = ticket.section;
+  const partyString = ticket.seats > 1 ? "and your party " : "";
+
+  let message = `Welcome, ${ticket.name}! You ${partyString}may sit anywhere ${seatingString} of the ${sectionString} section.`;
+
+  if (ticket.seats > 1)
+    message += " Please be sure to leave no seats between you.";
+  console.log(message);
+}
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
