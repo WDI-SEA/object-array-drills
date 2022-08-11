@@ -13,7 +13,8 @@ const album1 = {
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
-
+let recordLabel = album1.label
+console.log(recordLabel)
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 
 const album2 = {
