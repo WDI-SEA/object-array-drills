@@ -230,6 +230,7 @@ for (let i = 0; i < talkingHeadsAlbums.length; i++ ) {
   sireTally++
   console.log()
 }
+// I DON'T UNDERSTAND AAAAHHHH
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
@@ -311,3 +312,32 @@ const tickets = [
   {amount: 90.00},
   {amount: 50.00, discount: true}
 ]  
+for (let i = 0; < tickets.length; i++){
+  let message = ""
+  let credit = 0
+
+if (tickets[i]. amount === 50){
+message += "STANDARD"
+
+} else if (tickets[i]. amount === 65 ){
+  messgae += "PREMIER"
+} else if (tickets[1].amount === 90) {
+
+} else if (tickets[i].amount === 80 && tickets[i].discount) {
+message += "PREMIER PLUS"
+} Else {
+  console.log("INVALID TICKET")
+}
+if (tickets[i].discount) {
+  credit += 10
+}
+if (tickets[i].zombie) {
+credit += 10
+}
+if (credit) {
+message += ' ' + credit + ' ' + "DRINKS"
+}
+  // business logic of adding up their discounts and credits
+  // Ticket amount is 50
+  // 
+  // Print the message at the end
