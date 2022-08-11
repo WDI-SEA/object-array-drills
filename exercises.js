@@ -55,6 +55,9 @@ console.log(album3.albumDetails["formats"])
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
 
+album3.released = new Date("August, 3, 1979")
+console.log(album3.released)
+
 const album4 = {
   title: "Remain in Light",
   albumDetails: {
@@ -64,6 +67,9 @@ const album4 = {
 }  
 
 // 5. Add the label "Sire" to album4's details
+
+album4.albumDetails.label = "Sire"
+console.log(album4.albumDetails.label)
 
 const album5 = {
   title: "Speaking in Tongues",
