@@ -93,7 +93,7 @@ const album7 = {
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
-album7.albumDetails.labels = album7.albumDetails.labels.split()
+album7.albumDetails.labels = album7.albumDetails.labels.split(',')
 
 
 /////////////////////////////////////////////////////
@@ -254,11 +254,20 @@ const ticketSections = [
 ]  
 
 for (let taco of ticketSections) {
-  if (taco.type === "premium") {
-    console.log("Welcome, " + taco.name + "! You may sit anywhere in the first 3 rows of the " + taco.section + " section.")
-  } else if (taco.type === "standard"){
-    console.log("Welcome, " + taco.name + "! You and your party may sit anywhere except first 3 rows of the " + taco.section + " section. Please be sure to leave no seats between you.")
+  let message = "Welcome, " +taco.name + "! "
+
+  if (taco.seats == 1){
+    message += "You may sit anywhere "
+  } else {
+    message += "You and your party may sit anywhere "
   }
+
+  if (taco.type === "premium") {
+    message += "in the first 3 rows of the " + taco.section + " section."
+  } else if (taco.type === "standard"){
+    message += "except the first 3 rows of the " + taco.section + " section. Please be sure to leave no seats between you."
+  }
+  console.log(message)
 }
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
