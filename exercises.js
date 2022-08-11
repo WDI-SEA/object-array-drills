@@ -20,6 +20,9 @@ let recordLabel = album1.albumDetails["label"]
 console.log(recordLabel)
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 
+album1.title = "Talking Heads: 77"
+console.log(album1)
+
 const album2 = {
   title: "More Songs About Buildings and Food",
   albumDetails: {
