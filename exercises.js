@@ -15,7 +15,9 @@ const album1 = {
 //    variable.
 let recordLabel = album1.albumDetails.label
 // console.log(recordLabel);
+
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+
 album1.title = "Talking Heads: 77"
 // console.log(album1.title)
 
@@ -132,13 +134,19 @@ const talkingHeadsAlbums = [
 ]  
 
 // 1. Create an object literal called `band`.
+
 const band = {
 }
+
 // 2. Give it the property `name` and set it to "Talking Heads"
+
 band.name = "Talking Heads"
+
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
+
 band.members = ["David Byrne"]
+
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
 
@@ -206,9 +214,9 @@ if(talkingHeadsAlbums.length % 2 == 0 && talkingHeadsAlbums.length % 3 == 0){
 
 // 1. Use a for loop to print out the name of each Talking Heads album
 
-for(let i = 0; i < band.albums.length; i++)
+for(let i = 0; i < band.albums.length; i++){
   // console.log(band.albums[i].title)
-
+}
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
 //    incrementing sireTally if the album was released under the "Sire" label.
@@ -219,13 +227,14 @@ for(let i = 0; i < band.albums.length; i++)
 let sireTally = 0
 
 for(let i = 0; i < talkingHeadsAlbums.length; i++) {
-  // console.log(talkingHeadsAlbums[i])
- if(talkingHeadsAlbums[i].label === "Sire" || talkingHeadsAlbums[i].labels === ["Sire"]) {
-   sireTally += sireTally
-   console.log(sireTally)
- }
+  if(talkingHeadsAlbums[i].label === "Sire"){
+    console.log("jammin")
+    sireTally = sireTally++
+   }else if(talkingHeadsAlbums[i].labels === ["Sire"]){
+    sireTally = sireTally++
+   }
 }
-// console.log(sireTally)
+console.log(sireTally)
 
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
@@ -269,6 +278,29 @@ const ticketSections = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ]  
 
+for (let i = 0; i < ticketSections.length; i++) {
+  const ticket = ticketSections[i]; 
+  if (ticket.section === "center") {
+    if(ticket.type === "premium"){
+      console.log("Welcome " + ticket.name + ", you may sit anywhere in the first three rows of the center section.")
+    }else if(ticket.type === "standard"){
+    console.log("Welcome " + ticket.name + ", you may sit anywhere except the first three rows of the center section" )
+    }
+  }else if(ticket.section === "left"){
+    if(ticket.type === "premium"){
+      console.log("Welcome " + ticket.name + ", you may sit anywhere in the first three rows of the left section.")
+    }else if(ticket.type === "standard"){
+    console.log("Welcome " + ticket.name + ", you may sit anywhere except the first three rows of the left section" )
+    }
+  }else if(ticket.section === "right"){
+    if(ticket.type === "premium"){
+      console.log("Welcome " + ticket.name + ", you may sit anywhere in the first three rows of the right section.")
+    }else if(ticket.type === "standard"){
+    console.log("Welcome " + ticket.name + ", you may sit anywhere except the first three rows of the right section" )
+    }
+  }
+}
+
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
@@ -308,3 +340,33 @@ const tickets = [
   {amount: 90.00},
   {amount: 50.00, discount: true}
 ]  
+for (let i = 0; i < tickets.length; i++) {
+  const entryFee = tickets[i];
+  if (entryFee.amount === 50.00) {
+    if (entryFee.discount === true || entryFee.zombie === true) {
+      console.log("STANDARD $10 DRINK VOUCHER")
+    }else if (entryFee.discount === true && entryFee.zombie === true){
+      console.log("STANDARD $20 DRINK VOUCHER")
+    }else{
+      console.log("STANDARD NO DRINKS")
+    }
+  }else if (entryFee.amount === 65){
+    if (entryFee.discount === true && entryFee.zombie === true){
+    console.log("PREMIER $20 DRINK VOUCHER")
+    }else if (entryFee.discount === true || entryFee.zombie === true) {
+      console.log("PREMIER $10 DRINK VOUCHER")
+    }else{
+      console.log("PREMIER NO DRINKS")
+    }
+  }else if (entryFee.amount === 80){
+    if(entryFee.discount !== true){
+    console.log("ERROR INVALID TICKET")
+    }else{
+      console.log("PREMIER PLUS")
+    }
+  }else if(entryFee.amount === 90) {
+    console.log("PREMIER PLUS")
+  }else {
+    console.log("ERROR: INVALID TICKET")
+  }
+}
