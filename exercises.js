@@ -10,10 +10,13 @@ const album1 = {
     formats:  ["LP"]
   }
 }  
+console.log(album1.albumDetails.label)
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
 
+album1.albumDetails.label[0] = variable
+console.log(variable)
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 
 const album2 = {
