@@ -192,11 +192,11 @@ if(talkingHeadsAlbums.length % 2 == 0 && talkingHeadsAlbums.length % 3 ==0) {
 
 let albums0 = 0
 
-if(albums0.length % 2 == 0 && albums0.length % 3 ==0) {
+if(albums0 % 2 == 0 && albums0 % 3 ==0) {
     console.log("The album total is divisible by 2 & 3");
-} else if (albums0.length % 3 ==0) { 
+} else if (albums0 % 3 ==0) { 
   console.log("The album total is divisible by 3");
-} else if (albums0.length % 2 == 0) {
+} else if (albums0 % 2 == 0) {
   console.log("The album total is divisible by 2");
 } else {
   console.log("The album total is not divisible by 2 or 3");
@@ -204,11 +204,11 @@ if(albums0.length % 2 == 0 && albums0.length % 3 ==0) {
 
 let albums1 = 1
 
-if(albums1.length % 2 == 0 && albums1.length % 3 ==0) {
+if(albums1 % 2 == 0 && albums1% 3 ==0) {
     console.log("The album total is divisible by 2 & 3");
-} else if (albums1.length % 3 ==0) { 
+} else if (albums1 % 3 ==0) { 
   console.log("The album total is divisible by 3");
-} else if (albums1.length % 2 == 0) {
+} else if (albums1 % 2 == 0) {
   console.log("The album total is divisible by 2");
 } else {
   console.log("The album total is not divisible by 2 or 3");
@@ -216,11 +216,11 @@ if(albums1.length % 2 == 0 && albums1.length % 3 ==0) {
 
 let albums2 = 2
 
-if(albums2.length % 2 == 0 && albums2.length % 3 ==0) {
+if(albums2 % 2 == 0 && albums2 % 3 ==0) {
     console.log("The album total is divisible by 2 & 3");
-} else if (albums2.length % 3 ==0) { 
+} else if (albums2 % 3 ==0) { 
   console.log("The album total is divisible by 3");
-} else if (albums2.length % 2 == 0) {
+} else if (albums2 % 2 == 0) {
   console.log("The album total is divisible by 2");
 } else {
   console.log("The album total is not divisible by 2 or 3");
@@ -228,11 +228,11 @@ if(albums2.length % 2 == 0 && albums2.length % 3 ==0) {
 
 let albums6 = 6
 
-if(albums6.length % 2 == 0 && albums6.length % 3 ==0) {
+if(albums6% 2 == 0 && albums6% 3 ==0) {
     console.log("The album total is divisible by 2 & 3");
-} else if (albums6.length % 3 ==0) { 
+} else if (albums6 % 3 ==0) { 
   console.log("The album total is divisible by 3");
-} else if (albums6.length % 2 == 0) {
+} else if (albums6 % 2 == 0) {
   console.log("The album total is divisible by 2");
 } else {
   console.log("The album total is not divisible by 2 or 3");
@@ -240,11 +240,11 @@ if(albums6.length % 2 == 0 && albums6.length % 3 ==0) {
 
 let albums7 = 7
 
-if(albums7.length % 2 == 0 && albums7.length % 3 ==0) {
+if(albums7 % 2 == 0 && albums7% 3 ==0) {
     console.log("The album total is divisible by 2 & 3");
-} else if (albums7.length % 3 ==0) { 
+} else if (albums7 % 3 ==0) { 
   console.log("The album total is divisible by 3");
-} else if (albums7.length % 2 == 0) {
+} else if (albums7 % 2 == 0) {
   console.log("The album total is divisible by 2");
 } else {
   console.log("The album total is not divisible by 2 or 3");
@@ -252,11 +252,11 @@ if(albums7.length % 2 == 0 && albums7.length % 3 ==0) {
 
 let albums9 = 9
 
-if(albums9.length % 2 == 0 && albums9.length % 3 ==0) {
+if(albums9 % 2 == 0 && albums9 % 3 ==0) {
     console.log("The album total is divisible by 2 & 3");
-} else if (albums9.length % 3 ==0) { 
+} else if (albums9 % 3 ==0) { 
   console.log("The album total is divisible by 3");
-} else if (albums9.length % 2 == 0) {
+} else if (albums9% 2 == 0) {
   console.log("The album total is divisible by 2");
 } else {
   console.log("The album total is not divisible by 2 or 3");
