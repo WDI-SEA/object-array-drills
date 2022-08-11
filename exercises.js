@@ -2,7 +2,7 @@
 // Part 1: Working With Data Structures
 ////////////////////////////////////////////////
 
-const album1 = {
+let album1 = {
   title: "Talking Heads",
   albumDetails: {
     released: new Date("September 16, 1977"),
@@ -10,14 +10,16 @@ const album1 = {
     formats:  ["LP"]
   }
 }  
-console.log(album1.albumDetails.label)
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
 
-album1.albumDetails.label[0] = variable
+let variable = album1.albumDetails.label
 console.log(variable)
+
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+album1.title = 'Talking Heads:77' 
+console.log(album1.title)
 
 const album2 = {
   title: "More Songs About Buildings and Food",
@@ -40,9 +42,17 @@ const album3 = {
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
+console.log(album2)
+
+album3.albumDetails.formats.push("LP")
+console.log(album3)
+
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
+
+album3.albumDetails.released = new Date("August 3, 1979")
+console.log(album3)
 
 const album4 = {
   title: "Remain in Light",
@@ -53,6 +63,7 @@ const album4 = {
 }  
 
 // 5. Add the label "Sire" to album4's details
+
 
 const album5 = {
   title: "Speaking in Tongues",
