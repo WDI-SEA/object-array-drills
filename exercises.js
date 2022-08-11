@@ -334,7 +334,7 @@ const tickets = [
 ]  
 
 for(i = 0; i < tickets.length; i++) {
-  output = ''
+  let output = ''
   if(tickets[i].amount === 50) {
     switch(true) {
       case tickets[i].discount && tickets[i].zombie:
