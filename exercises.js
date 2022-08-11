@@ -59,7 +59,73 @@ const album5 = {
   }
 }  
 
+//Challenge 1 & 2:
+
+const album1 = {
+  title: "Talking Heads",
+  albumDetails: {
+    released: new Date("September 16, 1977"),
+    label:    "Sire",
+    formats:  ["LP"]
+  }
+} 
+
+
+console.log(album1.albumDetails.label)
+let recordLabel = "Sire"
+console.log(recordLabel)
+album1.title = "Talking Heads: 77"
+console.log(album1.title)
+
+
+//Challenge 3 & 4(?):
+
+const album2 = {
+  title: "More Songs About Buildings and Food",
+  albumDetails: {
+    released: new Date("July 14, 1978"),
+    label:    "Sire",
+    formats:  ["LP", "8-track"]
+  }
+}  
+
+const album3 = {
+  title: "Fear of Music",
+  albumDetails: {
+    released: new Date("August 3, 1979"),
+    label:    "Sire",
+    formats:  ["Cassette"]
+  }
+}  
+
+console.log(album2.albumDetails.formats)
+album3.albumDetails.formats.push("LP")
+console.log(album3.albumDetails.formats)
+
+//Challenge 5: (?)
+
+const album4 = {
+  title: "Remain in Light",
+  albumDetails: {
+    released: new Date("October 8, 1980"),
+    formats: ["Cassette", "LP"],
+    label: "Sire",
+  }
+}  
+
+
+const album5 = {
+  title: "Speaking in Tongues",
+  albumDetails: {
+    released: new Date("May 31, 1983"),
+    label:    "Sire"
+  }
+}  
+
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
+let formats = ['CD', 'Cassette', 'LP']
+album5.albumDetails.array.push(formats)
+console.log(album5)
 
 const album6 = {
   title: "Little Creatures",
