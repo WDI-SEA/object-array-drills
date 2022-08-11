@@ -155,6 +155,8 @@ band.albums = talkingHeadsAlbums
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
 
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
+
 console.log("Part 2. ", band)
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
@@ -175,10 +177,11 @@ if (album === 6) {
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
+
 let album = 6
-if (album === 6) {
+if (album == 6, 4, 2) {
   console.log("The number " + album + " is even")
-} else if (album == 3){
+} else if (album == 1, 3, 5){
   console.log("")
 }
 // 3. Write conditionals to check if the number of albums in
