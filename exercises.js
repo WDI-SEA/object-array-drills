@@ -149,7 +149,7 @@ band.members = ["David Byrne"]
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
 band.albums = talkingHeadsAlbums
-// ^^not sure on this answer after checking the solutions ^^
+
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
 band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
@@ -288,6 +288,26 @@ const ticketSections = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ]  
 
+for(guest of ticketSections) {
+  let greeting = `Welcome, ${guest.name}!`
+  
+  if(guest.seats === 1) {
+    greeting += ` You may sit anywhere`
+  } else {
+    greeting += ` You and your party may sit anywhere`
+  }
+  
+  if(guest.type === "premium") {
+    greeting += ` in the first 3 rows of the ${guest.section} section.`
+  } else {
+    greeting += ` except the first 3 rows of the ${guest.section} section.`
+  }
+  
+  greeting += ` Please be sure to leave no seats between you`
+  console.log(greeting)
+}
+
+
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
@@ -327,3 +347,4 @@ const tickets = [
   {amount: 90.00},
   {amount: 50.00, discount: true}
 ]  
+
