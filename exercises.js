@@ -346,6 +346,6 @@ for (i = 0; i < tickets.length; i++) {
   } else if (tickets[i].amount === 90.00 || tickets[i].amount === 80.00) {
     console.log("ticket" + [i] + " => 'PREMIER PLUS'")
   } else {
-    console.log("ticket" + [i] + " => '$60 TICKET FOR SOME REASON $10 DRINKS'")
+    console.log("ticket" + [i] + " => 'ERROR: INVALID TICKET'")
   }
 }
