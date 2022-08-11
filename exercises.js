@@ -76,6 +76,9 @@ const album5 = {
 }  
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
+album5.albumDetails.formats = ["CD", "Cassette", "LP"]
+console.log(album5)
+
 
 const album6 = {
   title: "Little Creatures",
@@ -88,6 +91,9 @@ const album6 = {
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
+album6.albumDetails.labels[1] = 'emi'.toUpperCase()
+console.log(album6)
+
 
 const album7 = {
   title: "True Stories",
