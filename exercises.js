@@ -348,3 +348,35 @@ const tickets = [
   {amount: 50.00, discount: true}
 ]  
 
+for(ticket of tickets) {
+  let message = null
+  let drinkVoucher = 0
+
+  if(ticket.discount === true) {
+    drinkVoucher += 10
+  }
+  if(ticket.zombie === true) {
+    drinkVoucher += 10
+  }
+
+  if(ticket.amount === 50){
+    message = "STANDARD"
+  } else if (ticket.amount === 65) {
+    message = "PREMIER"
+  } else if (ticket.amount === 90) {
+    console.log("PREMIER PLUS")
+    continue //need to look into this
+  } else if (ticket.amount === 80 && ticket.discount === true){
+    console.log("PREMIER PLUS")
+    continue
+  } else {
+    console.log("ERROR: INVALID TICKET")
+    continue
+  }
+
+  if(drinkVoucher > 0) {
+    message += ` $${drinkVoucher} DRINKS`
+  }
+
+  console.log(message)
+}
