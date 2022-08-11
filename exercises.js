@@ -174,6 +174,13 @@ if (talkingHeadsAlbums.length >= 6) {
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 
+const albumAmount = talkingHeadsAlbums.length
+if (albumAmount % 2 === 0) {
+  console.log("The number " + albumAmount + " is even")
+} else {
+  console.log("The number " + albumAmount + " is odd")
+}
+
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
 //    console.log one of:
