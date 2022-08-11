@@ -194,7 +194,15 @@ if (album == 6, 4, 2) {
 //
 //    with Y being the number of albums.
 
-let 
+if (numAblums % 2 === 0 && numAblums % 3 === 0) {
+  console.log('The number ' + numAblums + ' is divisible by 2')
+}else if (numAblums % 3 === 0) {
+  console.log('The number ' + numAblums + ' is divisible by 3')
+} else if (numAblums % 2 === 0) {
+  console.log('The number ' + numAblums + ' is divisible by 2')
+} else {
+  console.log(`the number ${numAblums} is not divisable by 2 or 3`)
+}
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
