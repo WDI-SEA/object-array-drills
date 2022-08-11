@@ -81,6 +81,9 @@ const album5 = {
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
+album5.albumDetails.formats = ["CD", "Cassette", "LP"]
+console.log(album5.albumDetails.formats)
+
 const album6 = {
   title: "Little Creatures",
   albumDetails: {
