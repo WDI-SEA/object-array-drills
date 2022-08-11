@@ -107,6 +107,9 @@ const album7 = {
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
+album7.albumDetails.labels = "Sire, EMI".split()
+console.log(album7)
+
 
 /////////////////////////////////////////////////////
 // Part 2: More Tasks About Datatypes and Structures
