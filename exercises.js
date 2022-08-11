@@ -136,17 +136,27 @@ const talkingHeadsAlbums = [
 ]  
 
 // 1. Create an object literal called `band`.
-
+const band = {
+}
 // 2. Give it the property `name` and set it to "Talking Heads"
+band.name = "Talking Heads"
 
+console.log(band)
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
+band.members = ["David Byrne"]
+
 
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
+band.albums = talkingHeadsAlbums 
+
+
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
+console.log(band.members)
 
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
@@ -157,10 +167,25 @@ const talkingHeadsAlbums = [
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 
+
+let album = talkingHeadsAlbums.length
+if(album >= 6) {
+  console.log("Talking Heads were a prolific band")
+} else {
+  console.log("Talking heads didn't have much output")
+}
+
+
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
+
+if (album %2 == 0) {
+  console.log("The number " + album + " is even")
+} else {
+  console.log("The number " + album + " is odd")
+}
 
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
@@ -171,6 +196,19 @@ const talkingHeadsAlbums = [
 //    - "The number Y is not divisible by 2 or 3",
 //
 //    with Y being the number of albums.
+
+if (album === 0){
+  console.log ("There are no albums")
+} else if (album % 2 == 0 && album % 3 == 0){
+  console.log ("The number " + album + " is divisible by 2 and 3")
+} else if (album % 2 == 0) {
+  console.log ("The number " + album + " is divisible by 2")
+} else if (album % 3 == 0) {
+  console.log("The number " + album + " is divisible by 3")
+} else {
+  console.log ("The number " + album + " is not divisible 2 or 3")
+}
+
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
