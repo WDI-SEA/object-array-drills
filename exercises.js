@@ -163,6 +163,12 @@ band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 
+if (talkingHeadsAlbums.length >= 6) {
+  console.log("Talking Heads were a prolific band")
+} else {
+  console.log("Talking heads didn't have much output.")
+}
+
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
