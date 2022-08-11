@@ -23,6 +23,7 @@ console.log(recordLabel)
 album1.title = "Talking Heads: 77"
 console.log(album1)
 
+
 const album2 = {
   title: "More Songs About Buildings and Food",
   albumDetails: {
@@ -44,6 +45,12 @@ const album3 = {
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
+
+console.log(album2.albumDetails["formats"][0])
+
+album3.albumDetails["formats"].push(album2.albumDetails["formats"][0]);
+
+console.log(album3.albumDetails["formats"])
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
