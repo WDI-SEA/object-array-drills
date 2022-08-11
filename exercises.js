@@ -362,6 +362,52 @@ const tickets = [
   {amount: 50.00, discount: true}
 ]  
 
+
 for(let n = 0; n < tickets.length; n++) {
-  if(amount )
+  let typeDiscount = "";
+  let ticketLabel = "";
+  switch(tickets[n].amount) {
+    case 50:
+      ticketLabel = "STANDARD";
+      if(tickets[n].discount === true && tickets[n].zombie === true) {
+        typeDiscount = "$20 DRINKS";
+      } else if(tickets[n].discount === true) {
+        typeDiscount = "$10 DRINKS";
+      } else if(tickets[n].zombie === true) {
+        typeDiscount = "$10 DRINKS";
+      } 
+      break;
+    case 65:
+      ticketLabel = "PREMIER";
+      if(tickets[n].discount === true && tickets[n].zombie === true) {
+        typeDiscount = "$20 DRINKS";
+      } else if(tickets[n].discount === true) {
+        typeDiscount = "$10 DRINKS";
+      } else if(tickets[n].zombie === true) {
+        typeDiscount = "$10 DRINKS";
+      } else {
+        typeDiscount = "NO DRINKS";
+      }
+      break;
+    case 90:
+      ticketLabel = "PREMIER PLUS";
+      break;
+    case 80:
+      if(tickets[n].discount === true) {
+        ticketLabel = "PREMIER PLUS";
+      }
+      break;
+    default:
+      ticketLabel = "ERROR: INVALID TICKET";
+      break;
+  }
+  if (ticketLabel === "ERROR: INVALID TICKET"){
+    console.log(ticketLabel);
+  } else {
+    console.log(ticketLabel + " " + typeDiscount);
+  }
 }
+
+
+
+
