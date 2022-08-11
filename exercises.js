@@ -112,6 +112,9 @@ const album7 = {
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
 
+album7.albumDetails.labels = album7.albumDetails.labels.split(",")
+console.log(album7.albumDetails.labels)
+
 /////////////////////////////////////////////////////
 // Part 2: More Tasks About Datatypes and Structures
 /////////////////////////////////////////////////////
