@@ -204,6 +204,18 @@ if (albumAmount % 2 === 0 && albumAmount % 3 === 0) {
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
 
+if (albumAmount === 0) {
+  console.log("The number " + albumAmount + " is not divisible by 2 or 3")
+} else if (albumAmount % 2 === 0 && albumAmount % 3 === 0) {
+  console.log("The number " + albumAmount + " is divisible by 2 and 3")
+} else if (albumAmount % 2 === 0) {
+  console.log("The number " + albumAmount + " is divisible by 2")
+} else if (albumAmount % 3 === 0){
+  console.log("The number " + albumAmount + " is divisible by 3")
+} else {
+  console.log("The number " + albumAmount + " is not divisible by 2 or 3")
+}
+
 /////////////////////////////////////////////////////
 // Part 4: For Loops
 /////////////////////////////////////////////////////
