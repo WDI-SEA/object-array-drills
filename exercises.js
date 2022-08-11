@@ -140,18 +140,20 @@ const talkingHeadsAlbums = [
 ]  
 
 // 1. Create an object literal called `band`.
-
+let band = {}
 // 2. Give it the property `name` and set it to "Talking Heads"
-
+band.name = "Talking Heads"
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
-
+band.members = ["David Byrne"]
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
-
+band.albums = talkingHeadsAlbums
+// ^^not sure on this answer after checking the solutions ^^
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
-
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
+//^^ did not match solution but still console logs correct information ^^
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
 ////////////////////////////////////////////////
