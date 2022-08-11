@@ -2,6 +2,10 @@
 // Part 1: Working With Data Structures
 ////////////////////////////////////////////////
 
+////////////////////////////////////////////////
+// Part 1: Working With Data Structures
+////////////////////////////////////////////////
+
 const album1 = {
   title: "Talking Heads",
   albumDetails: {
@@ -9,7 +13,18 @@ const album1 = {
     label:    "Sire",
     formats:  ["LP"]
   }
-}  
+}
+
+var recordLabel = album1.albumDetails.label
+  console.log(recordLabel)
+
+album1.title = "Talking Heads: 77"
+console.log(album1.title)
+
+// 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
+//    variable.
+
+// 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
@@ -34,6 +49,14 @@ const album3 = {
   }
 }  
 
+var format = album2.albumDetails.formats[0]
+album3.albumDetails.formats.push(format)
+console.log(album3.albumDetails.formats)
+
+album3.albumDetails.released = new Date(album3.albumDetails.released);
+console.log(album3.albumDetails.released)
+
+
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
@@ -49,6 +72,10 @@ const album4 = {
   }
 }  
 
+album4.albumDetails.label="Sire"
+console.log(album4.albumDetails.label)
+
+
 // 5. Add the label "Sire" to album4's details
 
 const album5 = {
@@ -57,8 +84,10 @@ const album5 = {
     released: new Date("May 31, 1983"),
     label:    "Sire"
   }
-}  
-
+} 
+const formats = ['CD', 'Cassette', 'LP']
+album5.albumDetails.formats = formats
+console.log(album5.albumDetails.formats)
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
 const album6 = {
@@ -69,6 +98,9 @@ const album6 = {
     formats:  ["CD", "cassette", "LP"]
   }
 }  
+album6.albumDetails.labels.pop ()
+album6.albumDetails.labels.push ("EMI")
+console.log(album6.albumDetails.labels)
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
@@ -81,6 +113,8 @@ const album7 = {
     formats:  ["CD", "cassette", "LP"]
   }
 }  
+album7.albumDetails.labels = ["Sire", "EMI"]
+console.log(album7.albumDetails.labels)
 
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
@@ -110,6 +144,14 @@ const talkingHeadsAlbums = [
   album8
 ]  
 
+const band = {
+  name: "Talking Heads",
+  members: ["David Byrne"],
+  albums: [talkingHeadsAlbums],
+}
+band.members.push ("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
+console.log(band.members)
+
 // 1. Create an object literal called `band`.
 
 // 2. Give it the property `name` and set it to "Talking Heads"
@@ -126,6 +168,100 @@ const talkingHeadsAlbums = [
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
 ////////////////////////////////////////////////
+
+if (talkingHeadsAlbums.length > 6 ) {
+  console.log("Talking Heads were a prolific band")
+}
+
+if(talkingHeadsAlbums.length % 2 == 0) {
+    console.log("The number is even");
+} else {
+    console.log("The number is odd");
+}
+
+
+if(talkingHeadsAlbums.length % 2 == 0 && talkingHeadsAlbums.length % 3 ==0) {
+    console.log("The album total is divisible by 2 & 3");
+} else if (talkingHeadsAlbums.length % 3 ==0) { 
+  console.log("The album total is divisible by 3");
+} else if (talkingHeadsAlbums.length % 2 == 0) {
+  console.log("The album total is divisible by 2");
+} else {
+  console.log("The album total is not divisible by 2 or 3");
+}
+
+let albums0 = 0
+
+if(albums0.length % 2 == 0 && albums0.length % 3 ==0) {
+    console.log("The album total is divisible by 2 & 3");
+} else if (albums0.length % 3 ==0) { 
+  console.log("The album total is divisible by 3");
+} else if (albums0.length % 2 == 0) {
+  console.log("The album total is divisible by 2");
+} else {
+  console.log("The album total is not divisible by 2 or 3");
+}
+
+let albums1 = 1
+
+if(albums1.length % 2 == 0 && albums1.length % 3 ==0) {
+    console.log("The album total is divisible by 2 & 3");
+} else if (albums1.length % 3 ==0) { 
+  console.log("The album total is divisible by 3");
+} else if (albums1.length % 2 == 0) {
+  console.log("The album total is divisible by 2");
+} else {
+  console.log("The album total is not divisible by 2 or 3");
+}
+
+let albums2 = 2
+
+if(albums2.length % 2 == 0 && albums2.length % 3 ==0) {
+    console.log("The album total is divisible by 2 & 3");
+} else if (albums2.length % 3 ==0) { 
+  console.log("The album total is divisible by 3");
+} else if (albums2.length % 2 == 0) {
+  console.log("The album total is divisible by 2");
+} else {
+  console.log("The album total is not divisible by 2 or 3");
+}
+
+let albums6 = 6
+
+if(albums6.length % 2 == 0 && albums6.length % 3 ==0) {
+    console.log("The album total is divisible by 2 & 3");
+} else if (albums6.length % 3 ==0) { 
+  console.log("The album total is divisible by 3");
+} else if (albums6.length % 2 == 0) {
+  console.log("The album total is divisible by 2");
+} else {
+  console.log("The album total is not divisible by 2 or 3");
+}
+
+let albums7 = 7
+
+if(albums7.length % 2 == 0 && albums7.length % 3 ==0) {
+    console.log("The album total is divisible by 2 & 3");
+} else if (albums7.length % 3 ==0) { 
+  console.log("The album total is divisible by 3");
+} else if (albums7.length % 2 == 0) {
+  console.log("The album total is divisible by 2");
+} else {
+  console.log("The album total is not divisible by 2 or 3");
+}
+
+let albums9 = 9
+
+if(albums9.length % 2 == 0 && albums9.length % 3 ==0) {
+    console.log("The album total is divisible by 2 & 3");
+} else if (albums9.length % 3 ==0) { 
+  console.log("The album total is divisible by 3");
+} else if (albums9.length % 2 == 0) {
+  console.log("The album total is divisible by 2");
+} else {
+  console.log("The album total is not divisible by 2 or 3");
+}
+
 
 // 1. Write a conditional to console.log "Talking Heads were a prolific band"
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
