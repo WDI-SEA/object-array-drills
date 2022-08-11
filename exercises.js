@@ -44,6 +44,8 @@ const album3 = {
 //    album3's formats
 // Check out the Array.push method!
 
+
+
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
 
@@ -153,7 +155,8 @@ if (album === 6) {
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
-let 
+let album = 6
+if (album ===)
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
 //    console.log one of:
@@ -188,6 +191,7 @@ for (let i = 0; i <album; i++) {
 
 let sireTally = 0
 for (let i = 0; i < talkingHeadsAlbums.length; i++ ) {
+  if (talkingHeadsAlbums[i].label == 'Sire' || )
   sireTally++
   console.log()
 }
