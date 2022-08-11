@@ -222,6 +222,9 @@ if (albumAmount === 0) {
 
 // 1. Use a for loop to print out the name of each Talking Heads album
 
+for (let i = 0; i < albumAmount; i++){
+  console.log(talkingHeadsAlbums.[i].title)
+}
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
 //    incrementing sireTally if the album was released under the "Sire" label.
