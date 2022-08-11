@@ -232,6 +232,20 @@ for (let i = 0; i < albumAmount; i++){
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
 
+let sireTally = 0
+for (let i = 0; i < albumAmount; i++) {
+  if (talkingHeadsAlbums[i].albumDetails.label === "Sire"){
+  sireTally++
+      console.log(talkingHeadsAlbums[i].albumDetails.label)
+  }
+   else if(talkingHeadsAlbums[i].albumDetails.labels.includes("Sire")) {
+    sireTally++
+     console.log(talkingHeadsAlbums[i].albumDetails.labels)
+  }
+} 
+
+console.log(sireTally)
+
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
