@@ -63,6 +63,8 @@ const album4 = {
 }  
 
 // 5. Add the label "Sire" to album4's details
+album4.albumDetails.label = "Sire"
+console.log(album4)
 
 
 const album5 = {
