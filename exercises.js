@@ -277,6 +277,17 @@ const ticketSections = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ]  
 
+for(let i=0; i<ticketSections.length; i++){
+
+  if (ticketSections[i].type == "premium") {
+    console.log(`Welcome, ${ticketSections[i].name}! You may sit anywhere in the first 3 rows of the ${ticketSections[i].section} section.`)
+  } else {
+    console.log(`Welcome, ${ticketSections[i].name}! You and your party may sit anywhere except first 3 rows of the ${ticketSections[i].section} section. Please be sure to leave no seats between you.`)
+  }
+  
+}
+
+
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
