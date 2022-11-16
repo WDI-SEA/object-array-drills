@@ -19,6 +19,7 @@ console.log("1. ", albumLabel)
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 
+// album1.title = album1.title + ": 77"
 album1.title += ": 77"
 console.log("2. ", album1.title)
 
@@ -50,9 +51,11 @@ console.log("3. ", album3.albumDetails.formats)
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
 
-// console.log(Date.parse(album3.albumDetails.released), 'parsed', Date.now(), "now")
-album3.albumDetails.released = new Date(album3.albumDetails.released)
+// console.log("4. BEFORE", album3.albumDetails.released)
+album3.albumDetails.released = new Date("August 3, 1979")
+// album3.albumDetails.released = new Date(album3.albumDetails.released)
 console.log("4. ", album3.albumDetails.released)
+
 
 const album4 = {
 	title: "Remain in Light",
@@ -77,7 +80,9 @@ const album5 = {
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
-album5.albumDetails.formats = ["CD", "Cassette", "LP"]
+// album5.albumDetails.formats = ["CD", "Cassette", "LP"]
+album5.albumDetails.formats = []
+album5.albumDetails.formats.push("CD", "Cassette", "LP")
 console.log("6. ", album5.albumDetails.formats)
 
 const album6 = {
@@ -108,6 +113,7 @@ const album7 = {
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
 
+// console.log("8. BEFORE", album7.albumDetails.labels)
 album7.albumDetails.labels = album7.albumDetails.labels.split(",")
 console.log("8. ", album7.albumDetails.labels)
 
@@ -136,23 +142,26 @@ const talkingHeadsAlbums = [
 ]
 
 // 1. Create an object literal called `band`.
-let band = {}
+
+const band = {}
 
 // 2. Give it the property `name` and set it to "Talking Heads"
+
 band.name = "Talking Heads"
 
 // 3. Give it the property `members` and set it to an array with a single string, "David Byrne", in it.
+
 band.members = ["David Byrne"]
 
 // 4. Give it the property `albums` and set it to the array stored in the variable talkingHeadsAlbums
+
 band.albums = talkingHeadsAlbums
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members array.
-band.members.push("Tiny Weymouth")
-band.members.push("Chris Franz")
-band.members.push("Jerry Harrison")
 
-console.log("band obj: ", band)
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
+
+console.log("Part 2. ", band)
 
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
@@ -163,10 +172,10 @@ console.log("band obj: ", band)
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 
-if (talkingHeadsAlbums.length >= 6) {
-	console.log("Talking Heads were a prolific band")
+if(talkingHeadsAlbums.length >= 6){
+  console.log("Talking Heads were a prolific band")
 } else {
-	console.log("Talking heads didn't have much output")
+  console.log("Talking Heads didn't have much output")
 }
 
 // 2. Write a conditional to check if the number of albums in
@@ -174,11 +183,11 @@ if (talkingHeadsAlbums.length >= 6) {
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 
-let albumsLen = talkingHeadsAlbums.length
-if (albumsLen % 2 === 0) {
-	console.log(`The number ${albumsLen} is even`)
+// if talkingheadsalbums.length is even
+if(talkingHeadsAlbums.length % 2 === 0){
+  console.log("The number " + talkingHeadsAlbums.length + " is even")
 } else {
-	console.log(`The number ${albumsLen}, is odd`)
+  console.log("The number " + talkingHeadsAlbums.length + " is odd")
 }
 
 // 3. Write conditionals to check if the number of albums in
@@ -191,23 +200,23 @@ if (albumsLen % 2 === 0) {
 //    with Y being the number of albums.
 
 let numAlbums = talkingHeadsAlbums.length
+numAlbums = 9
 
-if (numAlbums === 0) {
-	console.log("The number 0 is not divisible by 2 or 3 ")
-} else if (numAlbums % 2 === 0 && numAlbums % 3 === 0) {
-	console.log(`The number ${numAlbums} is divisible by 2 and 3`)
-} else if (numAlbums % 3 === 0) {
-	console.log(`The number ${numAlbums} is divisible by 3`)
-} else if (numAlbums % 2 === 0) {
-	console.log(`The number ${numAlbums} is divisible by 2`)
+if(numAlbums === 0) {
+  console.log(`The number ${numAlbums} is NOT divisible by 2 or 3`)
+} else if(numAlbums % 2 === 0) {
+  console.log(`The number ${numAlbums} is divisible by 2`)
+} else if(numAlbums % 3 === 0) {
+  console.log(`The number ${numAlbums} is divisible by 3`)
+} else if(numAlbums % 2 === 0 && numAlbums % 3 === 0) {
+  console.log(`The number ${numAlbums} is divisible by 2 and 3`)
 } else {
-	console.log(`The number ${numAlbums} is not divisible by 2 or 3`)
+  console.log(`The number ${numAlbums} is NOT divisible by 2 or 3`)
 }
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
 
-// numAlbums = 0
 
 
 /////////////////////////////////////////////////////
@@ -216,9 +225,6 @@ if (numAlbums === 0) {
 
 // 1. Use a for loop to print out the name of each Talking Heads album
 
-for(album of talkingHeadsAlbums) {
-  console.log(album.title) 
-}
 
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
