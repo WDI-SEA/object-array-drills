@@ -164,7 +164,7 @@ const talkingHeadsAlbums = [
 //    have `.labels`, which is an Array!
 
 /////////////////////////////////////////////////////
-// Part 5: More Tasks With Conditionals and Iteration
+// Bonus: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
 
 // 1. There is a Talking Heads concert at DAR Constitutional Hall, and
