@@ -40,6 +40,13 @@ const ticketSections = [
   {name: "Warren Christopher",    section: "right",  type: "standard", seats: 1},
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ]  
+for (let i = 0; i < ticketSections.length; i++) {
+  if (ticketSections[i].type === "premium") {
+    console.log("Welcome, " + ticketSections[i].name + "! You may sit anywhere in the first 3 rows of the " + ticketSections[i].section + " section.")
+  } else if (ticketSections[i].type === "standard") {
+    console.log("Welcome, " + ticketSections[i].name + "! You may sit anywhere except first 3 rows of the " + ticketSections[i].section + " section.")
+  }
+}
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
@@ -80,3 +87,23 @@ const tickets = [
   {amount: 90.00},
   {amount: 50.00, discount: true}
 ]  
+// 50 65 90
+
+for (let i = 0; i < tickets.length; i++) {
+  let whatAmount = tickets[i].amount
+  let whatDiscount = tickets[i].discount
+  let whatZombie = tickets[i].zombie
+  if (whatAmount === 90) {
+    if (whatDiscount === true){
+      console.log("prempluszombie")
+    }
+  } else if (whatAmount === 65) {
+    console.log("PREMIER")
+  } else if (whatAmount === 50) {
+    if (whatAmount === 50 && whatDiscount === true) {
+      console.log("standard and dis")
+    }
+    console.log("standard and nodis")
+  }
+}
+
