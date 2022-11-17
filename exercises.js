@@ -224,3 +224,5 @@ for (let i = 0; i < band.albums.length; i++) {
 }
 
 console.log(sireTally)
+
+//got stuck here 

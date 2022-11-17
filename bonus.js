@@ -46,6 +46,7 @@ if (ticketSections.type === "premium") {
   console.log("Welcome, ${name[i]}! You may sit anywhere in the first 3 rows of the right section.")
 }  
 
+// got stuck here as well, was tired haha 
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
