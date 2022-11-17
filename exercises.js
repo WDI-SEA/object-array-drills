@@ -11,6 +11,14 @@ const album1 = {
   }
 }  
 
+let rLabel = album1.albumDetails.label
+
+console.log(rLabel)
+
+album1.title = "Talking Heads: 77"
+
+console.log(album1.title)
+
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
 
@@ -34,6 +42,14 @@ const album3 = {
   }
 }  
 
+album3.albumDetails.formats.push(album2.albumDetails.formats[0])
+
+console.log(album3.albumDetails.formats)
+
+album3.albumDetails.released = new Date("August 3, 1979")
+
+console.log(album3.albumDetails)
+
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
@@ -49,6 +65,10 @@ const album4 = {
   }
 }  
 
+album4.albumDetails.label = "Sire"
+
+console.log(album4.albumDetails.label)
+
 // 5. Add the label "Sire" to album4's details
 
 const album5 = {
@@ -58,6 +78,12 @@ const album5 = {
     label:    "Sire"
   }
 }  
+
+let formats = ["CD", "Cassette", "LP"]
+
+album5.albumDetails["formats"] = formats
+
+console.log(album5.albumDetails)
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
 
@@ -70,6 +96,10 @@ const album6 = {
   }
 }  
 
+album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase()
+
+console.log(album6.albumDetails)
+
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
 
@@ -81,6 +111,10 @@ const album7 = {
     formats:  ["CD", "cassette", "LP"]
   }
 }  
+
+album7.albumDetails.labels = album7.albumDetails.labels.split(",")
+
+console.log(album7.albumDetails.labels)
 
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
@@ -109,6 +143,18 @@ const talkingHeadsAlbums = [
   album7,
   album8
 ]  
+
+const band = {
+  name: "Talking Heads",
+  members: ["David Byrne"],
+  albums: [talkingHeadsAlbums]
+}
+
+console.log(band.albums)
+
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
+
+console.log(band.members)
 
 // 1. Create an object literal called `band`.
 
@@ -150,6 +196,44 @@ const talkingHeadsAlbums = [
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
 
+if (talkingHeadsAlbums.length >= 6) {
+  console.log("Talking Heads were a prolific band")
+} else {
+  console.log("Talking heads didn't have much output.")
+}
+
+if (talkingHeadsAlbums.length % 2 === 0) {
+  console.log("The number " + talkingHeadsAlbums.length + " is even")
+} else {
+  console.log("The number " + talkingHeadsAlbums.length + " is odd")
+}
+
+if (talkingHeadsAlbums.length === 0) {
+  console.log("The number " + talkingHeadsAlbums.length + " is not divisible by 2 or 3")
+} else if (talkingHeadsAlbums.length % 2 === 0 && talkingHeadsAlbums.length % 3 === 0) {
+  console.log("The number " + talkingHeadsAlbums.length + " is divisible by 2 and 3")
+} else if (talkingHeadsAlbums.length % 2 === 0) {
+  console.log("The number " + talkingHeadsAlbums.length + " is divisible by 2")
+} else if (talkingHeadsAlbums.length % 3 === 0) {
+  console.log("The number " + talkingHeadsAlbums.length + " is divisible by 3")
+} else {
+  console.log("The number " + talkingHeadsAlbums.length + " is not divisible by 2 or 3")
+}
+
+let testing = 9
+
+if (testing === 0) {
+  console.log("The number " + testing + " is not divisible by 2 or 3")
+} else if (testing % 2 === 0 && testing % 3 === 0) {
+  console.log("The number " + testing + " is divisible by 2 and 3")
+} else if (testing % 2 === 0) {
+  console.log("The number " + testing + " is divisible by 2")
+} else if (testing % 3 === 0) {
+  console.log("The number " + testing + " is divisible by 3")
+} else {
+  console.log("The number " + testing + " is not divisible by 2 or 3")
+}
+
 /////////////////////////////////////////////////////
 // Part 4: For Loops
 /////////////////////////////////////////////////////
@@ -162,3 +246,21 @@ const talkingHeadsAlbums = [
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
+
+for (let i = 0; i < talkingHeadsAlbums.length; i++) {
+  console.log(talkingHeadsAlbums[i].title);
+}
+
+let sireTally = 0
+
+for (album of talkingHeadsAlbums) {
+    if (album.albumDetails.label === "Sire") {
+        sireTally++ 
+    } else if (album.albumDetails.labels) {
+        if (album.albumDetails.labels.includes("Sire")) {
+            sireTally++ 
+        }
+    }
+}
+
+console.log(sireTally)
