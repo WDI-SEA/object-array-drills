@@ -1,90 +1,124 @@
-////////////////////////////////////////////////
-// Part 1: Working With Data Structures
-////////////////////////////////////////////////
+// ////////////////////////////////////////////////
+// // Part 1: Working With Data Structures
+// ////////////////////////////////////////////////
 
-const album1 = {
-  title: "Talking Heads",
-  albumDetails: {
-    released: new Date("September 16, 1977"),
-    label:    "Sire",
-    formats:  ["LP"]
-  }
-}  
+// const album1 = {
+//   title: "Talking Heads",
+//   albumDetails: {
+//     released: new Date("September 16, 1977"),
+//     label:    "Sire",
+//     formats:  ["LP"]
+//   }
+// }  
 
-// 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
-//    variable.
+// // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
+// //    variable.
+// const producer = 'label'
+// console.log(producer)
+// console.log(album1.albumDetails.label)
 
-// 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+// // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+// album1.title = 'Talking Heads: 77'
+// console.log(album1)
 
-const album2 = {
-  title: "More Songs About Buildings and Food",
-  albumDetails: {
-    released: new Date("July 14, 1978"),
-    label:    "Sire",
-    formats:  ["LP", "8-track"]
-  }
-}  
+// const album2 = {
+//   title: "More Songs About Buildings and Food",
+//   albumDetails: {
+//     released: new Date("July 14, 1978"),
+//     label:    "Sire",
+//     formats:  ["LP", "8-track"]
+//   }
+// }  
 
-const album3 = {
-  title: "Fear of Music",
-  albumDetails: {
-    released: "August 3, 1979",
-    label:    "Sire",
-    formats:  ["Cassette"]
-  }
-}  
+// const album3 = {
+//   title: "Fear of Music",
+//   albumDetails: {
+//     released: "August 3, 1979",
+//     label:    "Sire",
+//     formats:  ["Cassette"]
+//   }
+// }  
 
-// 3. Access album2's formats array and use an array method to add "LP" to
-//    album3's formats
-// Check out the Array.push method!
+// // 3. Access album2's formats array and use an array method to add "LP" to
+// //    album3's formats
+// // Check out the Array.push method!
+// album3.albumDetails.formats.unshift('LP')
+// console.log(album3)
 
-// 4. Change the release date of album3 from a string into a Date object
-// Look ahead to album4 for a clue!
+// // 4. Change the release date of album3 from a string into a Date object
+// // Look ahead to album4 for a clue!
+// //don't know if this is right
+// album3.albumDetails.released = 'new Date("August 3, 1979")'
+// console.log(album3)
+// //teachers answer
+// //album3.albumDetails.released = new Date('August 3, 1979')
+// //console.log(album3.albumDetails.released)
 
-const album4 = {
-  title: "Remain in Light",
-  albumDetails: {
-    released: new Date("October 8, 1980"),
-    formats: ["Cassette", "LP"]
-  }
-}  
+// const album4 = {
+//   title: "Remain in Light",
+//   albumDetails: {
+//     released: new Date("October 8, 1980"),
+//     formats: ["Cassette", "LP"]
+//   }
+// }  
 
-// 5. Add the label "Sire" to album4's details
+// // 5. Add the label "Sire" to album4's details
+// album4.albumDetails.label='Sire'
+// console.log(album4)
 
-const album5 = {
-  title: "Speaking in Tongues",
-  albumDetails: {
-    released: new Date("May 31, 1983"),
-    label:    "Sire"
-  }
-}  
+// const album5 = {
+//   title: "Speaking in Tongues",
+//   albumDetails: {
+//     released: new Date("May 31, 1983"),
+//     label:    "Sire"
+//   }
+// }  
 
-// 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
+// // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
+// //ask how to move formats under title
+// //console.log('number 5')
+// album5.formats = ['CD', 'Cassette', 'LP']
+// console.log(album5)
 
-const album6 = {
-  title: "Little Creatures",
-  albumDetails: {
-    released: new Date("June 10, 1985"),
-    labels:   ["Sire", "emi"],
-    formats:  ["CD", "cassette", "LP"]
-  }
-}  
+// const album6 = {
+//   title: "Little Creatures",
+//   albumDetails: {
+//     released: new Date("June 10, 1985"),
+//     labels:   ["Sire", "emi"],
+//     formats:  ["CD", "cassette", "LP"]
+//   }
+// }  
 
-// 7. Make the label "emi" in album6 all uppercase
-// google how to make a string uppercase in js!
+// // 7. Make the label "emi" in album6 all uppercase
+// // google how to make a string uppercase in js!
+// // let text = (album6.albumDetails.labels[1])
+// // result = text.toUpperCase()
+// // album6.albumDetails.labels.pop()
+// // album6.albumDetails.labels[1] = (text)
+// // console.log(album6)
+// console.log('number 6')
+// album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase()
+// console.log(album6)
 
-const album7 = {
-  title: "True Stories",
-  albumDetails: {
-    released: new Date("October 7, 1986"),
-    labels:   "Sire, EMI",
-    formats:  ["CD", "cassette", "LP"]
-  }
-}  
 
-// 8. Convert album7's 'labels' property from the string value
-//    "Sire, EMI" into the array: ["Sire", "EMI"]
-// google js array split!
+// const album7 = {
+//   title: "True Stories",
+//   albumDetails: {
+//     released: new Date("October 7, 1986"),
+//     labels:   "Sire, EMI",
+//     formats:  ["CD", "cassette", "LP"]
+//   }
+// }  
+
+// // 8. Convert album7's 'labels' property from the string value
+// //    "Sire, EMI" into the array: ["Sire", "EMI"]
+// // google js array split!
+// album7.albumDetails.labels = ['Sire', 'EMI']
+// console.log(album7)
+// //teachers answer
+// //console.log('number 7')
+// //album7.albumDetails.labels = album7.albumDetails.labels.split(",")
+// //console.log(album7.albumDetails.labels)
 
 /////////////////////////////////////////////////////
 // Part 2: More Tasks About Datatypes and Structures
@@ -111,17 +145,34 @@ const talkingHeadsAlbums = [
 ]  
 
 // 1. Create an object literal called `band`.
+const band = {
+  
+}
 
 // 2. Give it the property `name` and set it to "Talking Heads"
+band.name = 'Talking Heads'
+//console.log(band)
 
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
+band.members = ['David Byrne']
+//console.log(band)
 
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
+//i dont get this problem
+//band.albums = talkingHeadsAlbums
+//console.log(band)
+//band.albums = 6
+// teachers answer
+band.albums = talkingHeadsAlbums
+//console.log(band)
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
+band.members.push('Tiny Weymouth', 'Chris Fraz', 'Jerry Harrison')
+console.log(band)
+
 
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
@@ -131,11 +182,43 @@ const talkingHeadsAlbums = [
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
+if (band.albums >= 6) {
+    console.log('Talking Heads were a prolific band')
+} else {
+  console.log("Talking heads didn't have much output")
+}
+
 
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
+// NEED HELP 
+// let x = band.albums.lenght
+// //if (band.albums.lenght % 2 === 0)
+// if (x % 2 === 0) {
+//   console.log('The number ' + x + ' is odd')
+// } else {
+//   console.log('The number ' + x + ' is even')
+// }
+
+// for (var x=0; x<=15; x++) {
+//         if (x === 0) {
+//                 console.log(x +  " is even");
+//         }
+//         else if (x % 2 === 0) {
+//                 console.log(x + " is even");   
+//         }
+//         else {
+//                 console.log(x + " is odd");
+//         }
+// }
+//teachers answer
+if (band.albums % 2 === 0) {
+  console.log('The number is even')
+} else { 
+  console.log('The number is odd')
+}
 
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
@@ -146,15 +229,46 @@ const talkingHeadsAlbums = [
 //    - "The number Y is not divisible by 2 or 3",
 //
 //    with Y being the number of albums.
+// NEED HELP
+//teachers answer
+let numAlbums = band.talkingHeadsAlbums.length
+numAlbums = 3
+
+
+if (numAlbums === 0) {
+  console.log('The number ' + numAlbums + ' is not divisible')
+} else if(numAlbums % 2 === 0 && numAlbums % 3 === 0) {
+  //divisible by 2 and 3
+  console.log('The number ' + numAlbums + ' is divisible by 2 and 3')
+} else if(numAlbums % 2 === 0) {
+  //divisible by 2
+  console.log('The number ' + numAlbums + ' is divisible by 2')
+} else if(numAlbums % 3 === 0) {
+  //divisible by 3
+  console.log('The number ' + numAlbums + ' is divisible by 3')
+} else {
+  //not divisible
+  console.log('The number ' + numAlbums + ' is not divisible')
+}
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
+
 
 /////////////////////////////////////////////////////
 // Part 4: For Loops
 /////////////////////////////////////////////////////
 
 // 1. Use a for loop to print out the name of each Talking Heads album
+// NEED HELP
+let i = talkingHeadsAlbums
+for (let i = 0; i < talkingHeadsAlbums.length; i++) {
+  console.log(talkingHeadsAlbums[i])
+}
+//teachers answers
+for(let i = 0; i < band.albums; i++) {
+  console.log(band.albums[i].title)
+}
 
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
@@ -162,3 +276,13 @@ const talkingHeadsAlbums = [
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
+// NEED HELP
+//teachers answers
+let sireTally = 0 
+for(let i = 0; i < band.albums; i++) {
+  //console.log('albums ' + band.albums[i].albumDetails)
+  if(band.albums[i].albumDetails.label === 'Sire' || band.albums[i].albumsDetails.labels.includes('Sire')){
+    sireTally++
+  }
+}
+console.log(sireTally)
