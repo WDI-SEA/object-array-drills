@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////
 // Part 1: Working With Data Structures
 ////////////////////////////////////////////////
-
+console.log("\n PART 1")
 const album1 = {
 	title: "Talking Heads",
 	albumDetails: {
@@ -120,7 +120,7 @@ console.log("8. ", album7.albumDetails.labels)
 /////////////////////////////////////////////////////
 // Part 2: More Tasks About Datatypes and Structures
 /////////////////////////////////////////////////////
-
+console.log("\n PART 2")
 const album8 = {
 	title: "Naked",
 	albumDetails: {
@@ -166,16 +166,16 @@ console.log("Part 2. ", band)
 ////////////////////////////////////////////////
 // Part 3: Conditional Logic
 ////////////////////////////////////////////////
-
+console.log("\n PART 3")
 // 1. Write a conditional to console.log "Talking Heads were a prolific band"
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
 
-if(talkingHeadsAlbums.length >= 6){
-  console.log("Talking Heads were a prolific band")
+if(talkingHeadsAlbums.length > 5){
+  console.log("1. Talking Heads were a prolific band")
 } else {
-  console.log("Talking Heads didn't have much output")
+  console.log("1. Talking Heads didn't have much output")
 }
 
 // 2. Write a conditional to check if the number of albums in
@@ -185,9 +185,9 @@ if(talkingHeadsAlbums.length >= 6){
 
 // if talkingheadsalbums.length is even
 if(talkingHeadsAlbums.length % 2 === 0){
-  console.log("The number " + talkingHeadsAlbums.length + " is even")
+  console.log("2. The number " + talkingHeadsAlbums.length + " is even")
 } else {
-  console.log("The number " + talkingHeadsAlbums.length + " is odd")
+  console.log("2. The number " + talkingHeadsAlbums.length + " is odd")
 }
 
 // 3. Write conditionals to check if the number of albums in
@@ -200,18 +200,25 @@ if(talkingHeadsAlbums.length % 2 === 0){
 //    with Y being the number of albums.
 
 let numAlbums = talkingHeadsAlbums.length
+// numAlbums = 2
+// numAlbums = 3
+
+// numAlbums = 0
+// numAlbums = 1
+// numAlbums = 6
+// numAlbums = 7
 numAlbums = 9
 
 if(numAlbums === 0) {
-  console.log(`The number ${numAlbums} is NOT divisible by 2 or 3`)
+  console.log(`3. The number ${numAlbums} is NOT divisible by 2 or 3`)
 } else if(numAlbums % 2 === 0) {
-  console.log(`The number ${numAlbums} is divisible by 2`)
+  console.log(`3. The number ${numAlbums} is divisible by 2`)
 } else if(numAlbums % 3 === 0) {
-  console.log(`The number ${numAlbums} is divisible by 3`)
+  console.log(`3. The number ${numAlbums} is divisible by 3`)
 } else if(numAlbums % 2 === 0 && numAlbums % 3 === 0) {
-  console.log(`The number ${numAlbums} is divisible by 2 and 3`)
+  console.log(`3. The number ${numAlbums} is divisible by 2 and 3`)
 } else {
-  console.log(`The number ${numAlbums} is NOT divisible by 2 or 3`)
+  console.log(`3. The number ${numAlbums} is NOT divisible by 2 or 3`)
 }
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
@@ -222,9 +229,12 @@ if(numAlbums === 0) {
 /////////////////////////////////////////////////////
 // Part 4: For Loops
 /////////////////////////////////////////////////////
-
+console.log("\n PART 4")
 // 1. Use a for loop to print out the name of each Talking Heads album
-
+console.log("1. Albums:")
+for(let i = 0; i < talkingHeadsAlbums.length; i++) {
+	console.log(talkingHeadsAlbums[i].title)
+}
 
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
@@ -232,11 +242,18 @@ if(numAlbums === 0) {
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
-
+let sireTally = 0
+for(let i = 0; i < talkingHeadsAlbums.length; i++) {
+	// console.log("album", talkingHeadsAlbums[i])
+	if (talkingHeadsAlbums[i].albumDetails.label === "Sire" || talkingHeadsAlbums[i].albumDetails.labels.includes("Sire")) {
+		sireTally++
+	}
+}
+console.log("2. Sire Tally: ", sireTally)
 /////////////////////////////////////////////////////
 // Part 5: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
-
+console.log("\n PART 5")
 // 1. There is a Talking Heads concert at DAR Constitutional Hall, and
 //    the attending dignitaries will be sitting in three sections:
 //    "left", "center", and "right".
@@ -285,6 +302,15 @@ const ticketSections = [
 	{ name: "Bob Dole", section: "center", type: "premium", seats: 3 },
 ]
 
+for(let i = 0; i < ticketSections.length; i++) {
+	if (ticketSections[i].type === "premium") {
+		console.log(`Welcome, ${ticketSections[i].name}! You may sit anywhere in the first 3 rows of the right section.`)
+	}
+	else if (ticketSections[i].type === "standard") {
+		console.log(`Welcome, ${ticketSections[i].name}! You and your party may sit anywhere except first 3 rows of the center section. \nPlease be sure to leave no seats between you."`)
+	}
+}
+
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
@@ -324,3 +350,30 @@ const tickets = [
 	{ amount: 90.0 },
 	{ amount: 50.0, discount: true },
 ]
+for(let i = 0; i < tickets.length; i++) {
+	console.log("\nticket:", tickets[i])
+	let voucherValue = 0
+	if (tickets[i].discount === true) {
+		voucherValue += 10
+	}
+	if (tickets[i].zombie === true) {
+		voucherValue += 10
+	}
+	// console.log("value: ", voucherValue)
+	if (tickets[i].amount === 50) {
+		voucherValue > 0 ? console.log(`STANDARD $${voucherValue} DRINKS`) : console.log("STANDARD NO DRINKS")
+	}
+	else if (tickets[i].amount === 65) {
+		voucherValue > 0 ? console.log(`PREMEIRE $${voucherValue} DRINKS`) : console.log("PREMEIRE NO DRINKS")
+	}
+	else if (tickets[i].amount === 80 && tickets[i].discount === true) {
+		console.log("PREMIERE PLUS")
+	}
+	else if (tickets[i].amount === 90) {
+		console.log("PREMIERE PLUS")
+	}
+	else {
+		console.log("ERROR INVALID TICKET")
+	}
+
+}
