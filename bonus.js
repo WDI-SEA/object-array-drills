@@ -31,15 +31,27 @@
 //    "Welcome, Madeline Albright! You may sit anywhere in the first 3 rows of the right section."
 //    "Welcome, Newt Gingrich! You and your party may sit anywhere except first 3 rows of the center section.
 //     Please be sure to leave no seats between you."
-
 const ticketSections = [
-  {name: "Boutros Boutros-Ghali", section: "center", type: "premium",  seats: 1},
-  {name: "Ann Richards",          section: "left",   type: "premium",  seats: 2},
+  {name: "Boutros Boutros-Ghali", 
+  section: "center", 
+  type: "premium",  
+  seats: 1},
+  {name: "Ann Richards",          
+  section: "left",   
+  type: "premium",  
+  seats: 2},
   {name: "George Will",           section: "left",   type: "standard", seats: 2},
   {name: "Marion Barry",          section: "center", type: "standard", seats: 8},
   {name: "Warren Christopher",    section: "right",  type: "standard", seats: 1},
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ]  
+for(let i= 0; i < ticketSections.length; i ++)
+  if (ticketSections[i].type = "premium") {
+    console.log(`Welcome, ${ticketSections[i].name}! You may sit anywhere in the first 3 rows of the right section.`)
+  } else if (ticketSections[i].type === "standard"){
+    console.log(`Welcome, ${ticketSections[i].name}! You and your party may sit anywhere except first 3 rows of the center section. Please be sure to leave no seats between you.`)
+  }
+  
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
@@ -80,3 +92,29 @@ const tickets = [
   {amount: 90.00},
   {amount: 50.00, discount: true}
 ]  
+
+for(let i = 0; i < tickets.length; i ++) {
+  console.log("\nticket:", tickets[i])
+  let voucherValue = 0
+  if(tickets[i].discount === true){
+    voucherValue +=10
+  }
+  if(tickets[i].zombie === true){
+    voucherValue +=10
+  }
+  if(tickets[i].amount === 50){
+    // console.log("STANDARD")
+    //conditional ? true case : false case
+    voucherValue > 0 ? console.log(`STANDARD $${voucherValue} DRINKS`):
+console.log("STANDARD NO DRINKS")  
+  } else if(tickets[i].amount === 65) {
+    console.log("PREMIERE")
+    voucherValue > 0 ? console.log(`PREMIERE $${voucherValue} DRINKS`): console.log("PREMIERE NO DRINKS")  
+  } else if (tickets[i].amounts ===80 && tickets.index[i].discounts === true) {
+    console.log("PREMIERE PLUS")
+  } else if(tickets[i].amount === 90) {
+    console.log("PREMIERE PLUS")
+  } else {
+    console.log("ERROR; INVALID TICKET")
+  }
+}
