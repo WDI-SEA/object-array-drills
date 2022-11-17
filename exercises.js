@@ -80,7 +80,7 @@ const album6 = {
   title: "Little Creatures",
   albumDetails: {
     released: new Date("June 10, 1985"),
-    labels:   ["Sire", "emi"],
+    labels:   ["Sigit re", "emi"],
     formats:  ["CD", "cassette", "LP"]
   }
 }  
