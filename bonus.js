@@ -41,6 +41,7 @@ const ticketSections = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ]  
 
+
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
@@ -80,3 +81,17 @@ const tickets = [
   {amount: 90.00},
   {amount: 50.00, discount: true}
 ]  
+
+const tickets = [
+  {amount: 50.00, discount: false, zombie: true}, // STANDARD $10 DRINKS
+  {amount: 60.00, discount: true,  zombie: false}, // INVALID
+  {amount: 50.00},  // STANDARD
+  {amount: 65.00, discount: true,  zombie: true}, // PREMIER $20 DRINKS
+  {amount: 90.00, discount: false}, // PREMIER PLUS
+  {amount: 50.00, discount: true,  zombie: false}, // STANDARD $10 DRINKS
+  {amount: 50.00, zombie:   true}, // STANDARD $10 DRINKS
+  {amount: 80.00, discount: true}, // PREMIER PLUS
+  {amount: 90.00}, // PREMIER PLUS
+  {amount: 50.00, discount: true} // STANDARD $10 DRINKS
+] 
+
