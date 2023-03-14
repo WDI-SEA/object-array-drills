@@ -108,7 +108,7 @@ const album7 = {
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
 
-album7.albumDetails.labels = album7.albumDetails.labels.split()
+album7.albumDetails.labels = album7.albumDetails.labels.split(",")
 console.log(album7)
 
 /////////////////////////////////////////////////////
@@ -204,7 +204,7 @@ switch(true) {
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
 
-console.log("it all worked")
+console.log("it all worked checked with the above")
 
 /////////////////////////////////////////////////////
 // Part 4: For Loops
@@ -215,6 +215,9 @@ console.log("it all worked")
   console.log(talkingHeadsAlbums[i].title)
  }
  
+ for (album in talkingHeadsAlbums) {
+  console.log(talkingHeadsAlbums[album].title)
+ }
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
 //    incrementing sireTally if the album was released under the "Sire" label.
@@ -228,6 +231,8 @@ for (let i = 0; i < talkingHeadsAlbums.length; i++) {
   if (talkingHeadsAlbums[i].albumDetails.labels = "Sire") {
     sireTally++;
   }
-}
-
+ else if(talkingHeadsAlbums[i].albumDetails.label = "Sire") {
+    sireTally++;
+  }
+}  
 console.log(sireTally);
