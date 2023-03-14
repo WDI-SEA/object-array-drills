@@ -11,10 +11,20 @@ const album1 = {
   }
 }  
 
-// 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
-//    variable.
+// album1.albumDetails.label
+console.log(album1.albumDetails.label)
+
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+
+  
+//LEARN HOW TO GOOGLE PROPERLY, JEEEZE! Need key not value
+// const obj = { oldKey: 'Talking Heads' };
+// obj.'Talking Heads: 77' = obj.'Talking Heads';
+// delete obj."Talking Heads";
+// console.log(obj);
+ 
+
 
 const album2 = {
   title: "More Songs About Buildings and Food",
@@ -24,6 +34,7 @@ const album2 = {
     formats:  ["LP", "8-track"]
   }
 }  
+
 
 const album3 = {
   title: "Fear of Music",
@@ -69,7 +80,7 @@ const album6 = {
     formats:  ["CD", "cassette", "LP"]
   }
 }  
-
+string.toUpperCase()
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
 
