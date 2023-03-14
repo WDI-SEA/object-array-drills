@@ -1,4 +1,3 @@
-
 /////////////////////////////////////////////////////
 // Bonus: More Tasks With Conditionals and Iteration
 /////////////////////////////////////////////////////
@@ -40,6 +39,15 @@ const ticketSections = [
   {name: "Warren Christopher",    section: "right",  type: "standard", seats: 1},
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ]  
+
+for (let i=0; ticketSections.length; i++) {
+  const dignitary = ticketSections[i]
+  if (dignitary.type === "premium") {
+    console.log(`Welcome, ${dignitary.name}! You may sit anywhere in the first 3 rows of the ${dignitary.section} section.`);
+  } else {
+    console.log(`Welcome, ${dignitary.name}! You and your party may sit anywhere except first 3 rows of the ${dignitary.section} section. Please be sure to leave no seats between you.`);
+  }
+} 
 
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
